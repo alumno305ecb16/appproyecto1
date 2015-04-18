@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+ 
+        <title>Mi aplicacion</title>
+
+        <!--grupo CSS-->
+         <link rel="stylesheet" type="text/css" href="css/mobipick.css" />
+         
+        <link rel="stylesheet" href="css/mitema.min.css" />
+        <link rel="stylesheet" href="css/jquery.mobile.icons-1.4.5.min.css" />
+        <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" /> 
+        
+        
+
+
+        <!--grupo JavaScript-->
+        <script src="js/jquery-1.11.2.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="js/xdate.js"></script>
+        <script type="text/javascript" src="js/mobipick.js"></script>
+        <script src="js/acciones.js" type="text/javascript"></script>
+        
+        <script src="phonegap.js" type="text/javascript"></script>
+        
+        
+       
+        
+ </head>
+
+ <body>
+<!-- Principal -->
+     <div data-role="page" id="principal" >   
+        <div data-role="header" data-position="fixed" data-tap-toggle="false">     
+         <h1>Medico</h1>
+        </div>
+
+     
+         
+         <div data-role="main" class="ui-content" >
+         <div align="center">
+         <div style="width:50%" data-role="controlgroup" data-type="vertical">
+         <a href="#embarazadas" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right"> EMBARAZADAS</a>
+         <a href="#nacido" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right">RECIEN NACIDO</a>
+         
+         
+         </div>
+         </div>
+        </div>
+        
+        
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+         
+        </div>        
+        
+     </div>
+  
+<!-- Principal -->
+
+<!-- Embarazadas -->
+     <div data-role="page" id="embarazadas" >   
+        <div data-role="header" data-position="fixed" data-tap-toggle="false">     
+         <h1>EMBARAZADAS</h1>
+        </div>
+
+     
+         
+         <div data-role="main" class="ui-content" >
+         <div align="center">
+         <div style="width:50%" data-role="controlgroup" data-type="vertical">
+         <a href="#fechaparto" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right">FECHA PROBABLE DE PARTO</a>
+         <a href="#riesgoobstetrico" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right">CALIFICACIÓN DE RIESGO OBSTÉTRICO</a>
+         
+         
+         </div>
+         </div>
+        </div>
+        
+        
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+      <ul><li><a href="#principal" data-icon="home">INICIO</a></li></ul>
+       </div>  
+        </div>        
+        
+     </div>
+     
+    
+  
+<!-- EMBARAZADAS -->
+<!-----------------------------------------FECHA PROBABLE DE PARTO------------------------------------------>
+
+ <div data-role="page" id="fechaparto" >   
+        <div data-role="header" data-position="fixed" data-tap-toggle="false">
+        <div style="width:10%; float:left"><a href="#embarazadas" class="ui-btn ui-shadow ui-icon-arrow-l ui-btn-icon-right ui-btn-corner-all ui-btn-icon-notext"></a></div>
+              <div style="width:80%; float:left" align="center"> <h1>FECHA PROBABLE DE PARTO</h1></div>
+               <div style="width:10%; float:left">&nbsp;</div>      
+        
+        </div>
+        
+         <div data-role="main" class="ui-content" >
+         <div align="center">
+         <div style="width:50%">
+     	
+					
+        
+       
+         <input id="calendario" type="text">
+       
+        <a href="#" class="ui-btn ui-btn-inline" onClick="embarazada()">CALCULAR</a>
+        
+         <h3> <div align="center" id="resfecha" style="background-color:#0FF"></div></h3>
+        	
+           </div>
+       	 </div>
+   
+    	</div>
+        
+          <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+      <ul><li><a href="#principal" data-icon="home">INICIO</a></li></ul>
+       </div>  
+        </div>        
+        
+  </div>
+<!-----------------------------------------SCRIPT EMBARAZADA------------------------------------------>
+
+<script>
+function embarazada()
+{
+			//r=r.toString();
+			//var dd=r.charAt(3)
+			//var mm =r.substring(0,2);
+			
+			var fecha=document.getElementById("calendario").value;
+			fecha=fecha.toString();
+			var di=fecha.substring(8,10);
+			var me=fecha.substring(5,7);
+			var yyy=fecha.substring(0,4);
+			
+			var dd=parseInt(di);
+			var mm=parseInt(me);
+			var yyy=parseInt(yyy);
+			
+			var d=parseInt(dd);
+			
+			for(var i=1;i<=287;i++)
+		{
+			switch(mm)
+			{
+			case 01:
+				var m=31;
+				var mes="ENERO"
+				break;
+			case 02:
+				var m=28;
+				var mes="FEBRERO"
+				break;
+			case 03:
+				var m=31;
+				var mes="MARZO"
+				break;
+			case 04:
+				var m=30;
+				var mes="ABRIL"
+				break;
+			case 05:
+				var m=31;
+				var mes="MAYO"
+				break;
+			case 06:
+				var m=30;
+				var mes="JUNIO"
+				break;
+			case 07:
+				var m=31;
+				var mes="JULIO"
+				break;
+			case 08:
+				var m=31;
+				var mes="AGOSTO"
+				break;
+			case 09:
+				var m=30;
+				var mes="SPTIEMBRE"
+				break;
+			case 10:
+				var m=31;
+				var mes="OCTUBRE"
+				break;
+			case 11:
+				var m=30;
+				var mes="NOVIEMBRE"
+				break;
+			case 12:
+				var m=31;
+				var mes="DICIEMBRE"
+				break;
+			}
+			var me;
+			
+			
+			if(m==d)
+			{
+				mm=mm+1;
+				d=0;
+			}
+			if(mm>12)
+			{
+				mm=1;
+				yyy=yyy+1;	
+			}
+			
+			d=d+1;
+			
+			if (i==280)
+			{
+					if (fecha=="")
+					{
+						alert("Seleccine una Fecha")	
+					}else{
+						document.getElementById("resfecha").innerHTML=d+"/"+mes+"/"+yyy;
+					}
+			}
+			
+			
+		}
+			
+			
+}
+</script>
+<!--------------------------------CALIFICACION DE RIESGO OBSTETRICO------------------------------------------>
+		 <div data-role="page" id="riesgoobstetrico">   
+       		 <div data-role="header" data-position="fixed" data-tap-toggle="false"> 
+                
+             <div style="width:10%; float:left">&nbsp;</div>
+              <div style="width:80%; float:left"> <h1 align="center">CALIFICACIÓN DE RIESGO OBSTÉTRICO</h1></div>
+               <div style="width:10%; float:left"><a href="#anteedentespersonalesp" class="ui-btn ui-shadow ui-icon-arrow-r ui-btn-icon-right ui-btn-corner-all ui-btn-icon-notext"></a></div> 
+        
+        	</div>
+       
+        <div data-role="main" class="ui-content" >
+         <div align="center">
+         <div style="width:50%" data-role="controlgroup" data-type="vertical">
+         
+          <ul data-role="listview" data-inset="true" id="lhc">
+    		 <li id="hc1" class="chc" data-icon="star"><a style="color:#F00">Edad (<15 años ó >40 años)</a></li>
+             <li id="hc2" class="chc" data-icon="star"><a style="color:#F00">Analfabeta</a></li>
+     	
+        </ul>
+        
+      
+         </div>
+         </div>
+         </div> 
+       
+        
+        </div>
+        </div>
+     
+    <!-------------------------ANTECEDENTES PERSONALES-------------------------------------------->
+    
+     <div data-role="page" id="anteedentespersonalesp" >   
+       		 <div data-role="header" data-position="fixed" data-tap-toggle="false">     
+         <h1>CALIFICACIÓN DE RIESGO OBSTÉTRICO</h1>
+        	</div>
+       
+        <div data-role="main" class="ui-content" >
+         <div align="center">
+         <div style="width:50%" data-role="controlgroup" data-type="vertical">
+         
+          <ul data-role="listview" data-inset="true" id="app">
+    		 <li id="app1" class="capp" data-icon="star"><a style="color:#F00">TB Pulmonar</a></li>
+             <li id="app2" class="capp" data-icon="star"><a style="color:#F00">Diabetes</a></li>
+             <li id="app3" class="capp" data-icon="star"><a style="color:#F00">Has crónica</a></li>
+             <li id="app4" class="capp" data-icon="star"><a style="color:#F00">Cirujia Pélvica/Uterina</a></li>
+             <li id="app5" class="capp" data-icon="star"><a style="color:#F00">Enf, Inmunológicas</a></li>
+     	
+        </ul>
+        
+       
+          
+         </div>
+         </div>
+         </div> 
+       
+        
+        </div>
+        </div>    
+         
+ </body>
+</html> 
