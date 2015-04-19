@@ -43,7 +43,8 @@
          <div align="center">
          <div style="width:50%" data-role="controlgroup" data-type="vertical">
          <a href="#embarazadas" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right"> EMBARAZADAS</a>
-         <a href="#nacido" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right">RECIEN NACIDO</a>
+         <a href="#reciennaido
+         " class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right">RECIEN NACIDO</a>
          
          
          </div>
@@ -95,7 +96,7 @@
  <div data-role="page" id="fechaparto" >   
         <div data-role="header" data-position="fixed" data-tap-toggle="false">
         <div style="width:10%; float:left"><a href="#embarazadas" class="ui-btn ui-shadow ui-icon-arrow-l ui-btn-icon-right ui-btn-corner-all ui-btn-icon-notext"></a></div>
-              <div style="width:80%; float:left" align="center"> <h1>FECHA PROBABLE DE PARTO</h1></div>
+              <div style="width:80%; float:left" align="center"> <h4>FECHA PROBABLE DE PARTO</h4></div>
                <div style="width:10%; float:left">&nbsp;</div>      
         
         </div>
@@ -289,6 +290,63 @@ function embarazada()
         
         </div>
         </div>    
+        
+        <!-------------------------------------recien nacido-------------------------------------------->
+        
+         <div data-role="page" id="reciennaido" >   
+       		 <div data-role="header" data-position="fixed" data-tap-toggle="false">     
+        		 <h4>FORMA DE LA OREJA(PABELLON)</h4>
+        	</div>
+       
+       	 <div data-role="main" class="ui-content" >
+         <div align="center" data-role="controlgroup" data-type="vertical">
+         	<a href="#capurrooreja" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right">CAPURRO</a>
+         <a href="#riesgoobstetrico" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right">AILVERMAN</a>
+         </div>
+         </div>
+         </div>
+         <!------------------------------------CAPURRO-------------------------------------------------->
+         
+         <div data-role="page" id="capurrooreja" >   
+       		 <div data-role="header" data-position="fixed" data-tap-toggle="false">     
+        		 <h4>FORMA DE LA OREJA(PABELLON)</h4>
+        	</div>
+       
+       	 <div data-role="main" class="ui-content" >
+         <div align="center" data-role="controlgroup" data-type="vertical">
+         <ul data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true">
+         
+    <li data-icon="delete" class="cfop"><a href="#" style="color:#F00" id="cpasi">
+        <img src="images/capurro/pabellon/aplanada.jpg">
+    <h2>Aplanada sin incurvación</h2>
+    </a>
+    </li>
+    
+    <li data-icon="delete" class="cfop"><a href="#" style="color:#F00" id="cpbspi">
+        <img src="images/capurro/pabellon/superior.jpg">
+    <h2>Borde Superior Parcialmente incurvado</h2>
+    </a>
+    </li>
+    
+     <li data-icon="delete" class="cfop"><a href="#" style="color:#F00" id="cptbsi">
+        <img src="images/capurro/pabellon/todoborde.jpg">
+    <h2>Todo El borde Sup Incurvado</h2>
+    </a>
+    </li>
+    
+    <li data-icon="delete" class="cfop"><a href="#" style="color:#F00" id="cppti">
+        <img src="images/capurro/pabellon/incurvadopabellon.jpg">
+    <h2>Pabellon Totalmente incurvado</h2>
+    </a>
+    </li>
+    </ul>
+         
+         
+         </div>
+         <div align="center" id=rpabellon></div>
+         </div>
+         
+        </div> 
          
  </body>
 </html> 

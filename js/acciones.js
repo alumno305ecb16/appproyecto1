@@ -1,6 +1,28 @@
 // JavaScript Document1
 $(document).on("pagecreate",function(){
 	
+	$(".chc ,.capp").tap(function() {
+	
+	//var iconochc = $(this).attr("data-icon");
+
+var $Quien = $(this).attr('id');
+var colorchc = $('#' + $Quien + ' a').css('color');
+	
+	switch(colorchc)
+	{
+		case ('rgb(255, 0, 0)'):
+			$('#' + $Quien + ' a').css('color', '#0F0');
+			break;
+		case ('rgb(0, 255, 0)'):
+			$('#' + $Quien + ' a').css('color', '#F00');
+			break;
+	}
+	alert($Quien);
+	});
+	
+	
+//---------------------------------------------------------------		
+	
     var picker = $( "#calendario", this );
     picker.mobipick();
 });
@@ -19,26 +41,11 @@ picker.on( "change", function() {
 });
 
 	
-	$(".chc ,.capp").click(function() {
-	
-	//var iconochc = $(this).attr("data-icon");
-
-var $Quien = $(this).attr('id');
-var colorchc = $('#' + $Quien + ' a').css('color');
-	//alert(colorchc);
-	if (colorchc == 'rgb(255, 0, 0)')
-	{
-	//	$(this).buttonMarkup({ icon: "check" });
-		$('#' + $Quien + ' a').css('color', '#0F0');
-	}
-	
-	if (colorchc == 'rgb(0, 255, 0)')
-	{
-  	  //  $(this).buttonMarkup({ icon: "delete" });
-		$('#' + $Quien + ' a').css('color', '#F00');
-	}
-
-    });
 	
 }); 
+		
+		
 });
+
+
+
