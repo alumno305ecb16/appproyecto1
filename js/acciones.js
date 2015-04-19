@@ -1,12 +1,12 @@
 // JavaScript Document1
 $(document).on("pagecreate",function(){
-	
-	$(".chc ,.capp").tap(function() {
+/*	
+	$(".chc,.capp").tap(function() {
 	
 	//var iconochc = $(this).attr("data-icon");
 
-var $Quien = $(this).attr('id');
-var colorchc = $('#' + $Quien + ' a').css('color');
+	var $Quien = $(this).attr('id');
+	var colorchc = $('#' + $Quien + ' a').css('color');
 	
 	switch(colorchc)
 	{
@@ -17,8 +17,9 @@ var colorchc = $('#' + $Quien + ' a').css('color');
 			$('#' + $Quien + ' a').css('color', '#F00');
 			break;
 	}
-	alert($Quien);
+	//alert($Quien);
 	});
+	*/
 	
 	
 //---------------------------------------------------------------		
