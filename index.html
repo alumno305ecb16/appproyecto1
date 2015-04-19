@@ -8,7 +8,6 @@
 
         <!--grupo CSS-->
          <link rel="stylesheet" type="text/css" href="css/mobipick.css" />
-         
         <link rel="stylesheet" href="css/mitema.min.css" />
         <link rel="stylesheet" href="css/jquery.mobile.icons-1.4.5.min.css" />
         <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" /> 
@@ -20,6 +19,9 @@
         <script src="js/jquery-1.11.2.min.js"></script>
         <script src="js/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="js/xdate.js"></script>
+    
+      <script type="text/javascript" src="js/xdate.i18n.js"></script>
+      
         <script type="text/javascript" src="js/mobipick.js"></script>
         <script src="js/acciones.js" type="text/javascript"></script>
         
@@ -31,6 +33,19 @@
  </head>
 
  <body>
+ <!---------------------------------------------PRINIPAL----------------------------------------->
+ <script>
+function confirmar()
+{
+	var confirmar=confirm("¿DESEAS REGRESAR AL INICIO?")
+	if(confirmar)
+	{
+//		alert("SI");
+	window.location=('#principal');	
+	}
+}
+</script>
+ 
 <!-- Principal -->
      <div data-role="page" id="principal" >   
         <div data-role="header" data-position="fixed" data-tap-toggle="false">     
@@ -106,9 +121,9 @@
          <div style="width:50%">
      	
 					
-        
+         <input id="calendario" class="selectorfechaum" type="text">
        
-         <input id="calendario" type="text">
+        
        
         <a href="#" class="ui-btn ui-btn-inline" onClick="embarazada()">CALCULAR</a>
         
@@ -249,22 +264,20 @@ function embarazada()
          <div align="center" data-role="controlgroup" data-type="vertical">
          
          
-         <form>
-    		<label>
-       		 <input name="checkbox-0 " type="checkbox" class="cdro" id="hc1">Edad (<15 años ó >40 años)
-  		  </label>
-          <label>
-          	<input name="checkbox-0 " type="checkbox" class="cdro" id="hc2">Analfabeta
-          </label>
-          </form>
+         <div class="checkboxes">
+<fieldset data-role="controlgroup" data-iconpos="right">
+  <input name="chc1" id="chc1" type="checkbox"><label id="hc1" for="chc1" style="color:#F00">Edad (Menor 15 años ó mayor a 40 años)</label>
+ <input name="chc2" id="chc2" type="checkbox"><label id="hc2" for="chc2" style="color:#F00">Analfabeta</label>
          
+     </fieldset>
+</div>  
         
          </div>
          </div> 
        
          <div data-role="footer" data-position="fixed" data-tap-toggle="false">
        <div data-role="navbar">
-     		 <ul><li><a href="#principal" data-icon="home">INICIO</a></li></ul>
+     		<ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
        </div>  
         </div>  
         
@@ -291,35 +304,24 @@ function embarazada()
         <div data-role="main" class="ui-content" >
          
          <div align="center" data-role="controlgroup" data-type="vertical">
-          <ul data-role="listview" data-inset="true" id="app">
+         
           
-          <form>
-    		<label>
-       		 <input name="checkbox-0 " type="checkbox" class="cdro" id="app1">TB Pulmonar
-  		  </label>
-          <label>
-          	<input name="checkbox-0 " type="checkbox" class="cdro" id="app2">Diabetes
-          </label>
-          <label>
-          	<input name="checkbox-0 " type="checkbox" class="cdro" id="app3">Has crónica
-          </label>
-          <label>
-          	<input name="checkbox-0 " type="checkbox" class="cdro" id="app4">Cirujia Pélvica/Uterina
-          </label>
-          <label>
-          	<input name="checkbox-0 " type="checkbox" class="cdro" id="app5">Enf, Inmunológicas
-          </label>
-		</form>
-     	
-        </ul>
-        
-       
+ <div class="checkboxes">
+			<fieldset data-role="controlgroup" data-iconpos="right">
+  <input name="capp1" id="capp1" type="checkbox"><label id="app1" for="capp1" style="color:#F00">TB Pulmonar)</label>
+ 	<input name="capp2" id="capp2" type="checkbox"><label id="app2" for="capp2" style="color:#F00">Diabetes Mellitus</label>
+    <input name="capp3" id="capp3" type="checkbox"><label id="app3" for="capp3" style="color:#F00">Has crónica</label>
+     <input name="capp4" id="capp4" type="checkbox"><label id="app4" for="capp4" style="color:#F00">Cirujia Pélvica/Uterina</label>
+     <input name="capp5" id="capp5" type="checkbox"><label id="app5" for="capp5" style="color:#F00">Has crónica</label>
+     </fieldset>
+</div>  
+          	
          </div>
          </div> 
        
          <div data-role="footer" data-position="fixed" data-tap-toggle="false">
        <div data-role="navbar">
-     		 <ul><li><a href="#principal" data-icon="home">INICIO</a></li></ul>
+     		 <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
        </div>  
         </div>  
         
@@ -344,48 +346,30 @@ function embarazada()
          
          <div align="center" data-role="controlgroup" data-type="vertical">
          
-         <form>
-    	<label>
-       		 <input name="checkbox-0 " type="checkbox" class="cdro" id="ago1">Infertilidad
-  	    </label>
-        <label>
-        	<input name="checkbox-0 " type="checkbox" class="cdro" id="ago2">Primigesta o Multi Gesta
-        </label>  
-        <label>
-         	<input name="checkbox-0 " type="checkbox" class="cdro" id="ago3">Aborto Previo
-        </label>
-        <label>
-        	<input name="checkbox-0 " type="checkbox" class="cdro" id="ago4">Cesárea Previa
-        </label>
-        <label>
-        	<input name="checkbox-0 " type="checkbox" class="cdro" id="ago5">2 ó más Cesáreas
-        </label>
-        <label>
-        	<input name="checkbox-0 " type="checkbox" class="cdro" id="ago6">Periodo Intergenésico Corto
-        </label>
-        <label>
-        	<input name="checkbox-0 " type="checkbox" class="cdro" id="ago7">OBITOS(uno)
-        </label>
-        <label>
-        	<input name="checkbox-0 " type="checkbox" class="cdro" id="ago8">Perdida Gestacional Recurrente
-        </label>
-        <label>
-        	<input name="checkbox-0 " type="checkbox" class="cdro" id="ago9">RN Muerte En 1re Semana de Vida EU 
-        </label>
-        <label>
-        	<input name="checkbox-0 " type="checkbox" class="cdro" id="ago10">RN con Peso menor 2500 gr
-        </label>
-        <label>
-        	<input name="checkbox-0 " type="checkbox" class="cago" id="ago11">RN con Peso mayor 4000gr
-        </label>
-         </form>
-         
+          <div class="checkboxes">
+			<fieldset data-role="controlgroup" data-iconpos="right">
+ 	<input name="cago1" id="cago1" type="checkbox"><label id="ago1" for="cago1" style="color:#F00">Infertilidad</label>
+	<input name="cago2" id="cago2" type="checkbox"><label id="ago2" for="cago2" style="color:#F00">Primigesta o Multi Gesta</label>
+   <input name="cago3" id="cago3" type="checkbox"><label id="ago3" for="cago3" style="color:#F00">Aborto Previo</label>
+  <input name="cago4" id="cago4" type="checkbox"><label id="ago4" for="cago4" style="color:#F00">Cesárea Previa</label>
+     <input name="cago5" id="cago5" type="checkbox"><label id="ago5" for="cago5" style="color:#F00">2 ó Más Cesáreas</label>
+  <input name="cago6" id="cago6" type="checkbox"><label id="ago6" for="cago6" style="color:#F00">Periodo Intergenésico Corto</label>
+   <input name="cago7" id="cago7" type="checkbox"><label id="ago7" for="cago7" style="color:#F00">OBITOS(uno)</label>
+    <input name="cago8" id="cago8" type="checkbox"><label id="ago8" for="cago8" style="color:#F00">Perdida Gestacional Recurrente</label>
+    <input name="cago9" id="cago9" type="checkbox"><label id="ago9" for="cago9" style="color:#F00">RN Muerte En 1re Semana de Vida EU </label>
+     <input name="cago10" id="cago10" type="checkbox"><label id="ago10" for="cago10" style="color:#F00">RN con Peso menor 2500 gr</label>
+     <input name="cago11" id="cago11" type="checkbox"><label id="ago11" for="cago11" style="color:#F00">RN con Peso menor 2500 gr</label>
+     
+     </fieldset>
+</div>  
+       
+          
          </div>
          </div>
          
          <div data-role="footer" data-position="fixed" data-tap-toggle="false">
        <div data-role="navbar">
-     		 <ul><li><a href="#principal" data-icon="home">INICIO</a></li></ul>
+     		<ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
        </div>  
         </div>  
         
@@ -405,50 +389,30 @@ function embarazada()
        
         <div data-role="main" class="ui-content" >
          <div align="center" data-role="controlgroup" data-type="vertical">
-          <form>
-    	<label>
-       		 <input name="checkbox-0 " type="checkbox" class="cdro" id="ea1">Preeclampsia en Embarazo Anterior
-  	    </label>
-        <label>
-       		 <input name="checkbox-0 " type="checkbox" class="cdro" id="ea2">Peso Mayor 80kg
-  	    </label>
-        <label>
-       		 <input name="checkbox-0 " type="checkbox" class="cdro" id="ea3">Peso Menor 40Kg
-  	    </label>
-        <label>
-       		 <input name="checkbox-0 " type="checkbox" class="cdro" id="ea4">Talla Menor 1.50cm
-  	    </label>
-        <label>
-       		 <input name="checkbox-0 " type="checkbox" class="cdro" id="ea5">Fum Incierta
-  	    </label>
-        <label>
-       		 <input name="checkbox-0 " type="checkbox" class="cdro" id="ea6">Sin Inmunización Antitetánica
-  	    </label>
-        <label>
-       		 <input name="checkbox-0 " type="checkbox" class="cdro" id="ea7">Grupo Sanguinéo RH Negativo
-  	    </label>
-        <label>
-       		 <input name="checkbox-0 " type="checkbox" class="cdro" id="ea8">HB menor 10mg/DL
-  	    </label>
-        <label>
-       		 <input name="checkbox-0 " type="checkbox" class="cdro" id="ea9">VDRL Positivo
-  	    </label>
-        <label>
-       		 <input name="checkbox-0 " type="checkbox" class="cdro" id="ea10">VIH Sida
-  	    </label>
-        <label>
-       		 <input name="checkbox-0 " type="checkbox" class="cdro" id="ea11">IVU
-  	    </label>
-        <label>
-       		 <input name="checkbox-0 " type="checkbox" class="cdro" id="ea12">Embarazo Múltiple
-  	    </label>
-        </form>
-         
+        
+           <div class="checkboxes">
+			<fieldset data-role="controlgroup" data-iconpos="right">
+ 	<input name="cea1" id="cea1" type="checkbox"><label id="cea1" for="cea1" style="color:#F00">Preeclampsia en Embarazo Anterior</label>
+	<input name="cea2" id="cea2" type="checkbox"><label id="cea2" for="cea2" style="color:#F00">Peso Mayor 80kg</label>
+   <input name="cea3" id="cea3" type="checkbox"><label id="cea3" for="cea3" style="color:#F00">Peso Menor 40Kg</label>
+  <input name="cea4" id="cea4" type="checkbox"><label id="cea4" for="cea4" style="color:#F00">Talla Menor 1.50cm</label>
+     <input name="cea5" id="cea5" type="checkbox"><label id="cea5" for="cea5" style="color:#F00">Fum Incierta</label>
+  <input name="cea6" id="cea6" type="checkbox"><label id="cea6" for="cea6" style="color:#F00">Sin Inmunización Antitetánica</label>
+   <input name="cea7" id="cea7" type="checkbox"><label id="cea7" for="cea7" style="color:#F00">Grupo Sanguinéo RH Negativo</label>
+    <input name="cea8" id="cea8" type="checkbox"><label id="cea8" for="cea8" style="color:#F00">HB menor 10mg/DL</label>
+    <input name="cea9" id="cea9" type="checkbox"><label id="cea9" for="cea9" style="color:#F00">VDRL Positivo</label>
+     <input name="cea10" id="cea10" type="checkbox"><label id="cea10" for="cea10" style="color:#F00">VIH Sida</label>
+     <input name="cea11" id="cea11" type="checkbox"><label id="cea11" for="cea11" style="color:#F00">IVU</label>
+     <input name="cea12" id="cea12" type="checkbox"><label id="cea12" for="cea12" style="color:#F00">Embarazo Múltiple</label>
+     </fieldset>
+</div>  
+       	
+       		 
          </div>
          </div>
           <div data-role="footer" data-position="fixed" data-tap-toggle="false">
        <div data-role="navbar">
-     		 <ul><li><a href="#principal" data-icon="home">INICIO</a></li></ul>
+     		 <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
        </div>  
         </div>  
         
@@ -471,38 +435,26 @@ function embarazada()
         <div data-role="main" class="ui-content" >
          <div align="center" data-role="controlgroup" data-type="vertical">
          
-          <form>
-    	<label>
-       		 <input name="checkbox-0 " type="checkbox" class="cdro" id="eca1">Exploración de Mamas Anormal
-  	    </label>
-        <label>
-       		 <input name="checkbox-0 " type="checkbox" class="cdro" id="eca2">Exploración de Pelvis Anormal
-  	    </label>
-        <label>
-       		 <input name="checkbox-0 " type="checkbox" class="cdro" id="eca3">Exploración de Cérvix Anormal
-  	    </label>
-        <label>
-       		 <input name="checkbox-0 " type="checkbox" class="cdro" id="eca4">T/A mayor 130/90 mmhg
-  	    </label>
-        <label>
-       		 <input name="checkbox-0 " type="checkbox" class="cdro" id="eca5">Altura Uterina Discordante
-  	    </label>
-        <label>
-       		 <input name="checkbox-0 " type="checkbox" class="cdro" id="eca6">FCF Menor 120X
-  	    </label>
-        <label>
-       		 <input name="checkbox-0 " type="checkbox" class="cdro" id="eca7">FCF Mayor 160X
-  	    </label>
-        </form>
-         
+         <div class="checkboxes">
+			<fieldset data-role="controlgroup" data-iconpos="right">
+ 	<input name="ceca1" id="ceca1" type="checkbox"><label id="eca1" for="ceca1" style="color:#F00">Exploración de Mamas Anormal</label>
+	<input name="ceca2" id="ceca2" type="checkbox"><label id="eca2" for="ceca2" style="color:#F00">Exploración de Pelvis Anormal</label>
+   <input name="ceca3" id="ceca3" type="checkbox"><label id="eca3" for="ceca3" style="color:#F00">Exploración de Cérvix Anormal</label>
+  <input name="ceca4" id="ceca4" type="checkbox"><label id="eca4" for="ceca4" style="color:#F00">T/A mayor 130/90 mmhg</label>
+     <input name="ceca5" id="ceca5" type="checkbox"><label id="eca5" for="ceca5" style="color:#F00">Altura Uterina Discordante</label>
+     <input name="ceca6" id="ceca6" type="checkbox"><label id="eca6" for="ceca6" style="color:#F00">FCF Menor 120X</label>
+     <input name="ceca7" id="ceca7" type="checkbox"><label id="eca7" for="ceca7" style="color:#F00">FCF Mayor 160X</label>
+ </fieldset>
+ </div>
+       		
          <br>
-        <a href="javascript:cro()"> <div class="ui-btn">RESULTADO</div></a>
+        <a href="#riesgoobstetricoresultado" id="calcular" class="ui-btn ui-shadow ui-icon-bars ui-btn-icon-right ui-btn-corner-all ui-btn-inline">Calcular</a>
          
          </div>
          </div>
          <div data-role="footer" data-position="fixed" data-tap-toggle="false">
        <div data-role="navbar">
-     		 <ul><li><a href="#principal" data-icon="home">INICIO</a></li></ul>
+     		 <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
        </div>  
         </div>  
         
@@ -514,7 +466,7 @@ function embarazada()
         <div data-role="page" id="riesgoobstetricoresultado">   
        		 <div data-role="header" data-position="fixed" data-tap-toggle="false"> 
                 
-             <div style="width:10%; float:left"><a href="#riesgoobstetricoembarazo" class="ui-btn ui-shadow ui-icon-arrow-l ui-btn-icon-right ui-btn-corner-all ui-btn-icon-notext"></a></div>
+             <div style="width:10%; float:left"><a href="#riesgoobstetricoexamen" class="ui-btn ui-shadow ui-icon-arrow-l ui-btn-icon-right ui-btn-corner-all ui-btn-icon-notext"></a></div>
              
               <div style="width:80%; float:left"> <h4 align="center">RESULTADO</h4></div>
               
@@ -856,7 +808,7 @@ function embarazada()
         
          <div data-role="page" id="reciennaido" >   
        		 <div data-role="header" data-position="fixed" data-tap-toggle="false">     
-        		 <h4>FORMA DE LA OREJA(PABELLON)</h4>
+        		 <h4>RECIEN NACIDO</h4>
         	</div>
        
        	 <div data-role="main" class="ui-content" >
@@ -864,8 +816,15 @@ function embarazada()
          	<a href="#capurrooreja" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right">CAPURRO</a>
          <a href="#riesgoobstetrico" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right">AILVERMAN</a>
          </div>
-         </div>
-         </div>
+         
+         <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+     		 <ul><li><a href="#principal" data-icon="home">INICIO</a></li></ul>
+       </div>  
+        </div>  
+        
+        </div>
+        </div>  
          <!------------------------------------CAPURRO-------------------------------------------------->
          
          <div data-role="page" id="capurrooreja" >   
@@ -876,26 +835,27 @@ function embarazada()
        	 <div data-role="main" class="ui-content" >
          <div align="center" data-role="controlgroup" data-type="vertical">
          <ul data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true">
+                
          
-    <li data-icon="delete" class="cfop"><a href="#" style="color:#F00" id="cpasi">
+    <li data-icon="star" class="cfop"><a style="color:#F00" href="#" id="cpasi">
         <img src="images/capurro/pabellon/aplanada.jpg">
-    <h2>Aplanada sin incurvación</h2>
+    <p><font face="Arial Black, Gadget, sans-serif" size="4" color="#FFFFFF">Aplanada sin incurvación</font></p>
     </a>
     </li>
     
-    <li data-icon="delete" class="cfop"><a href="#" style="color:#F00" id="cpbspi">
+    <li data-icon="star"><a href="#" id="cpbspi" class="cfop">
         <img src="images/capurro/pabellon/superior.jpg">
-    <h2>Borde Superior Parcialmente incurvado</h2>
+    <p><font face="Arial Black, Gadget, sans-serif" size="4">Borde Superior Parcialmente incurvado</font></p>
     </a>
     </li>
     
-     <li data-icon="delete" class="cfop"><a href="#" style="color:#F00" id="cptbsi">
+     <li data-icon="star" class="cfop"><a href="#" id="cptbsi">
         <img src="images/capurro/pabellon/todoborde.jpg">
     <h2>Todo El borde Sup Incurvado</h2>
     </a>
     </li>
     
-    <li data-icon="delete" class="cfop"><a href="#" style="color:#F00" id="cppti">
+    <li data-icon="delete" class="cfop"><a href="#" id="cppti">
         <img src="images/capurro/pabellon/incurvadopabellon.jpg">
     <h2>Pabellon Totalmente incurvado</h2>
     </a>

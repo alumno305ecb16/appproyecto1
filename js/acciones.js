@@ -1,38 +1,44 @@
 // JavaScript Document1
-$(document).on("pagecreate",function(){
-	/*
-	$(".cdro").tap(function() {
-	
-	//var iconochc = $(this).attr("data-icon");
 
-	var $Quien = $(this).attr('id');
-	var colorchc = $('#' + $Quien + ' a').css('color');
-	
-	switch(colorchc)
-	{
-		case ('rgb(255, 0, 0)'):
-			$('#' + $Quien + ' a').css('color', '#0F0');
-			break;
-		case ('rgb(0, 255, 0)'):
-			$('#' + $Quien + ' a').css('color', '#F00');
-			break;
-	}
-	
-	});
-*/
-	 //HISTORIA CLINICA
-	
-//------------------------------------------------------------------		
-	
+							//CALENDARIO
+$(document).on("pagecreate",function(){
+	//en español
+		$("input.selectorfechaum", this ).mobipick({
+				locale: "es"
+				
+			});
+		
+	//se dice quien va utilizar el selector de fehca
     var picker = $( "#calendario", this );
     picker.mobipick();
+	
+	//formato para el input de fecha
+	var picker = $( "#calendario" ).mobipick({
+    dateFormat: "dd-MM-yyyy"
 });
 
+});
 
+					//CAMBIAR COLOR
 $(document).ready(function(e) {
-	//CANCELA
-document.addEventListener("deviceready",function(){
 	
+	//document.addEventListener("deviceready",function(){
+		
+ $('input:checkbox').change(function() {
+	 $quien = $(this).attr('id');
+	 //alert($quien);
+	  if ($(this).is(':checked'))
+     {
+      $("label[for="+$quien+"]").css('color','#0F0');	 
+     }
+    else
+     {
+	  $("label[for="+$quien+"]").css('color','#F00');	 
+	 }
+ });
+ 
+});
+
 picker.on( "change", function() {
     // formatted date, like yyyy-mm-dd              
     var date = $( this ).val();
@@ -40,13 +46,3 @@ picker.on( "change", function() {
     // JavaScript Date object
     var dateObject = $( this ).mobipick( "option", "date" );
 });
-
-	
-	
-}); 
-		
-		
-});
-
-
-
