@@ -1,7 +1,7 @@
 // JavaScript Document1
 $(document).on("pagecreate",function(){
-/*	
-	$(".chc,.capp").tap(function() {
+	/*
+	$(".cdro").tap(function() {
 	
 	//var iconochc = $(this).attr("data-icon");
 
@@ -17,12 +17,12 @@ $(document).on("pagecreate",function(){
 			$('#' + $Quien + ' a').css('color', '#F00');
 			break;
 	}
-	//alert($Quien);
+	
 	});
-	*/
+*/
+	 //HISTORIA CLINICA
 	
-	
-//---------------------------------------------------------------		
+//------------------------------------------------------------------		
 	
     var picker = $( "#calendario", this );
     picker.mobipick();
