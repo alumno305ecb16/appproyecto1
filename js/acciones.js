@@ -2,6 +2,10 @@
 
 							//CALENDARIO
 $(document).on("pagecreate",function(){
+	var preguntas1 = "";
+	var preguntas2= "";
+	var preguntas3= "";
+	var preguntas4= "";
 	//en español
 		$("input.selectorfechaum", this ).mobipick({
 				locale: "es"
@@ -217,6 +221,29 @@ $('#resultadocro').on('click',function(){
 	 $("#puntosregs").text(suma);
 });
 
+ $(".preguntas_uno").on('click', function (){
+       preguntas1 = $(this).find('p').text();
+	   $( "body" ).pagecontainer( "change", "#silvermantoraxint", { transition: "slide" });
+	   
+   });
+
+ $(".preguntas_dos").on('click', function (){
+		   preguntas2 = $(this).find('p').text();
+		   $( "body" ).pagecontainer( "change", "#silvermanretrxif", { transition: "slide" });
+	   
+   });
+  
+  $(".preguntas_tres").on('click', function (){
+       preguntas3 = $(this).find('p').text();
+	   $( "body" ).pagecontainer( "change", "#silvermanaleteo1", { transition: "slide" });
+	   
+   });
+   
+    $(".preguntas_cuatro").on('click', function (){
+       preguntas4 = $(this).find('p').text();
+	   $( "body" ).pagecontainer( "change", "#silvermanaleteo1", { transition: "slide" });
+	  // alert(preguntas4);
+   });
 
 picker.on( "change", function() {
     // formatted date, like yyyy-mm-dd              
