@@ -152,9 +152,9 @@ function embarazada()
 			
 			var fecha=document.getElementById("calendario").value;
 			fecha=fecha.toString();
-			var di=fecha.substring(8,10);
-			var me=fecha.substring(5,7);
-			var yyy=fecha.substring(0,4);
+			var di=fecha.substring(0,2);
+			var me=fecha.substring(3,5);
+			var yyy=fecha.substring(6,10);
 			
 			var dd=parseInt(di);
 			var mm=parseInt(me);
@@ -354,7 +354,7 @@ function embarazada()
   <input name="cago4" id="cago4" type="checkbox"><label id="ago4" for="cago4" style="color:#F00">Cesárea Previa</label>
      <input name="cago5" id="cago5" type="checkbox"><label id="ago5" for="cago5" style="color:#F00">2 ó Más Cesáreas</label>
   <input name="cago6" id="cago6" type="checkbox"><label id="ago6" for="cago6" style="color:#F00">Periodo Intergenésico Corto</label>
-   <input name="cago7" id="cago7" type="checkbox"><label id="ago7" for="cago7" style="color:#F00">OBITOS(uno)</label>
+   <input name="cago71" id="cago71" type="checkbox"><label id="ago7" for="cago71" style="color:#F00">OBITOS(uno)</label>
     <input name="cago8" id="cago8" type="checkbox"><label id="ago8" for="cago8" style="color:#F00">Perdida Gestacional Recurrente</label>
     <input name="cago9" id="cago9" type="checkbox"><label id="ago9" for="cago9" style="color:#F00">RN Muerte En 1re Semana de Vida EU </label>
      <input name="cago10" id="cago10" type="checkbox"><label id="ago10" for="cago10" style="color:#F00">RN con Peso menor 2500 gr</label>
@@ -392,18 +392,18 @@ function embarazada()
         
            <div class="checkboxes">
 			<fieldset data-role="controlgroup" data-iconpos="right">
- 	<input name="cea1" id="cea1" type="checkbox"><label id="cea1" for="cea1" style="color:#F00">Preeclampsia en Embarazo Anterior</label>
-	<input name="cea2" id="cea2" type="checkbox"><label id="cea2" for="cea2" style="color:#F00">Peso Mayor 80kg</label>
-   <input name="cea3" id="cea3" type="checkbox"><label id="cea3" for="cea3" style="color:#F00">Peso Menor 40Kg</label>
-  <input name="cea4" id="cea4" type="checkbox"><label id="cea4" for="cea4" style="color:#F00">Talla Menor 1.50cm</label>
-     <input name="cea5" id="cea5" type="checkbox"><label id="cea5" for="cea5" style="color:#F00">Fum Incierta</label>
-  <input name="cea6" id="cea6" type="checkbox"><label id="cea6" for="cea6" style="color:#F00">Sin Inmunización Antitetánica</label>
-   <input name="cea7" id="cea7" type="checkbox"><label id="cea7" for="cea7" style="color:#F00">Grupo Sanguinéo RH Negativo</label>
-    <input name="cea8" id="cea8" type="checkbox"><label id="cea8" for="cea8" style="color:#F00">HB menor 10mg/DL</label>
-    <input name="cea9" id="cea9" type="checkbox"><label id="cea9" for="cea9" style="color:#F00">VDRL Positivo</label>
-     <input name="cea10" id="cea10" type="checkbox"><label id="cea10" for="cea10" style="color:#F00">VIH Sida</label>
-     <input name="cea11" id="cea11" type="checkbox"><label id="cea11" for="cea11" style="color:#F00">IVU</label>
-     <input name="cea12" id="cea12" type="checkbox"><label id="cea12" for="cea12" style="color:#F00">Embarazo Múltiple</label>
+ 	<input name="cea1" id="cea1" type="checkbox"><label id="ea1" for="cea1" style="color:#F00">Preeclampsia en Embarazo Anterior</label>
+	<input name="cea2" id="cea2" type="checkbox"><label id="ea2" for="cea2" style="color:#F00">Peso Mayor 80kg</label>
+   <input name="cea3" id="cea3" type="checkbox"><label id="ea3" for="cea3" style="color:#F00">Peso Menor 40Kg</label>
+  <input name="cea4" id="cea4" type="checkbox"><label id="ea4" for="cea4" style="color:#F00">Talla Menor 1.50cm</label>
+     <input name="cea5" id="cea5" type="checkbox"><label id="ea5" for="cea5" style="color:#F00">Fum Incierta</label>
+  <input name="cea6" id="cea6" type="checkbox"><label id="ea6" for="cea6" style="color:#F00">Sin Inmunización Antitetánica</label>
+   <input name="cea7" id="cea7" type="checkbox"><label id="ea7" for="cea7" style="color:#F00">Grupo Sanguinéo RH Negativo</label>
+    <input name="cea8" id="cea8" type="checkbox"><label id="ea8" for="cea8" style="color:#F00">HB menor 10mg/DL</label>
+    <input name="cea9" id="cea9" type="checkbox"><label id="ea9" for="cea9" style="color:#F00">VDRL Positivo</label>
+     <input name="cea10" id="cea10" type="checkbox"><label id="ea10" for="cea10" style="color:#F00">VIH Sida</label>
+     <input name="cea11" id="cea11" type="checkbox"><label id="ea11" for="cea11" style="color:#F00">IVU</label>
+     <input name="cea12" id="cea12" type="checkbox"><label id="ea12" for="cea12" style="color:#F00">Embarazo Múltiple</label>
      </fieldset>
 </div>  
        	
@@ -448,7 +448,8 @@ function embarazada()
  </div>
        		
          <br>
-        <a href="#riesgoobstetricoresultado" id="calcular" class="ui-btn ui-shadow ui-icon-bars ui-btn-icon-right ui-btn-corner-all ui-btn-inline">Calcular</a>
+        <a href="#riesgoobstetricoresultado" id="resultadocro" class="ui-btn ui-shadow ui-icon-bars ui-btn-icon-right ui-btn-corner-all ui-btn-inline">Calcular</a>
+      
          
          </div>
          </div>
@@ -827,47 +828,6 @@ function embarazada()
         </div>  
          <!------------------------------------CAPURRO-------------------------------------------------->
          
-         <div data-role="page" id="capurrooreja" >   
-       		 <div data-role="header" data-position="fixed" data-tap-toggle="false">     
-        		 <h4>FORMA DE LA OREJA(PABELLON)</h4>
-        	</div>
-       
-       	 <div data-role="main" class="ui-content" >
-         <div align="center" data-role="controlgroup" data-type="vertical">
-         <ul data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true">
-                
-         
-    <li data-icon="star" class="cfop"><a style="color:#F00" href="#" id="cpasi">
-        <img src="images/capurro/pabellon/aplanada.jpg">
-    <p><font face="Arial Black, Gadget, sans-serif" size="4" color="#FFFFFF">Aplanada sin incurvación</font></p>
-    </a>
-    </li>
-    
-    <li data-icon="star"><a href="#" id="cpbspi" class="cfop">
-        <img src="images/capurro/pabellon/superior.jpg">
-    <p><font face="Arial Black, Gadget, sans-serif" size="4">Borde Superior Parcialmente incurvado</font></p>
-    </a>
-    </li>
-    
-     <li data-icon="star" class="cfop"><a href="#" id="cptbsi">
-        <img src="images/capurro/pabellon/todoborde.jpg">
-    <h2>Todo El borde Sup Incurvado</h2>
-    </a>
-    </li>
-    
-    <li data-icon="delete" class="cfop"><a href="#" id="cppti">
-        <img src="images/capurro/pabellon/incurvadopabellon.jpg">
-    <h2>Pabellon Totalmente incurvado</h2>
-    </a>
-    </li>
-    </ul>
-         
-         
-         </div>
-         <div align="center" id=rpabellon></div>
-         </div>
-         
-        </div> 
          
  </body>
 </html> 
