@@ -56,7 +56,7 @@ function confirmar()
          
          <div data-role="main" class="ui-content" >
          <div align="center">
-         <div style="width:50%" data-role="controlgroup" data-type="vertical">
+         <div style="width:80%" data-role="controlgroup" data-type="vertical">
          <a href="#embarazadas" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right"> EMBARAZADAS</a>
          <a href="#reciennaido
          " class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right">RECIEN NACIDO</a>
@@ -85,9 +85,9 @@ function confirmar()
          
          <div data-role="main" class="ui-content" >
          <div align="center">
-         <div style="width:50%" data-role="controlgroup" data-type="vertical">
-         <a href="#fechaparto" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right">FECHA PROBABLE DE PARTO</a>
-         <a href="#riesgoobstetrico" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right">CALIFICACIÓN DE RIESGO OBSTÉTRICO</a>
+         <div style="width:80%" data-role="controlgroup" data-type="vertical">
+         <a href="#fechaparto" id="fdpp" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right">FECHA PROBABLE DE PARTO</a>
+         <a href="#riesgoobstetrico" id="cdro13" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right">CALIFICACIÓN DE RIESGO OBSTÉTRICO</a>
          
          
          </div>
@@ -118,18 +118,16 @@ function confirmar()
         
          <div data-role="main" class="ui-content" >
          <div align="center">
-         <div style="width:50%">
-     	
-					
+         <div style="width:30%">	
          <input id="calendario" class="selectorfechaum" type="text">
-       
+        </div>
         
        
-        <a href="#" class="ui-btn ui-btn-inline" onClick="embarazada()">CALCULAR</a>
+        <a href="#" class="ui-btn ui-btn-inline" onClick="embarazada()" id="calcularfechaparto">CALCULAR</a>
         
-         <h3> <div align="center" id="resfecha" style="background-color:#0FF"></div></h3>
+         <h3> <div align="center" id="resfecha" style="background-color:#09F"></div></h3>
         	
-           </div>
+          
        	 </div>
    
     	</div>

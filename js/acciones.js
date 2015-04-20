@@ -42,6 +42,18 @@ $(document).ready(function(e) {
  });
  
 });
+//Posible parto limpiar
+$('#fdpp').on('click',function(){
+
+	$("#resfecha").text("");
+});
+
+//
+$('#cdro13').on('click',function(){
+	alert("a");
+	$("input:checkbox").prop('checked', false);
+	$("input[type=checkbox]").prop('checked', false);
+});
 
 
 $('#resultadocro').on('click',function(){
@@ -220,6 +232,7 @@ $('#resultadocro').on('click',function(){
 		
 	 $("#puntosregs").text(suma);
 });
+
 
  $(".preguntas_uno").on('click', function (){
        preguntas1 = $(this).find('p').text();
