@@ -594,7 +594,8 @@ $('#resultadocro').on('click',function(){
    
    
    $('#btnriesgo').on('click',function(){
-	  $("body").pagecontainer("change","#riesgoobstetrico",{transition:"slidedown"});
+	//  $("body").pagecontainer("change","#riesgoobstetrico",{transition:"slidedown"});
+	  window.location=('#riesgoobstetrico');
 	  $('.caja').each(function() {
         if($(this).is(':checkbox'))
 		{
