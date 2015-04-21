@@ -48,8 +48,12 @@ function confirmar()
  
 <!-- Principal -->
      <div data-role="page" id="principal" >   
+     
+      
         <div data-role="header" data-position="fixed" data-tap-toggle="false">     
-         <h1>Medico</h1>
+         <div style="width:10%; float:left"><a href="#acercade" class="ui-btn ui-shadow ui-icon-info ui-btn-icon-right ui-btn-corner-all ui-btn-icon-notext"></a></div>
+        
+         <h1>HELPMED</h1>
         </div>
 
      
@@ -87,7 +91,7 @@ function confirmar()
          <div align="center">
          <div style="width:80%" data-role="controlgroup" data-type="vertical">
          <a href="#fechaparto" id="fdpp" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right">FECHA PROBABLE DE PARTO</a>
-         <a href="#riesgoobstetrico" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right">CALIFICACIÓN DE RIESGO OBSTÉTRICO</a>
+         <a href="#"   id="btnriesgo" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right">CALIFICACIÓN DE RIESGO OBSTÉTRICO</a> 
          
          
          </div>
@@ -118,14 +122,14 @@ function confirmar()
         
          <div data-role="main" class="ui-content" >
          <div align="center">
-         <div style="width:30%">	
+         <div style="width:40%">	
          <input id="calendario" class="selectorfechaum" type="text">
         </div>
         
        
-        <a href="#" class="ui-btn ui-btn-inline" onClick="embarazada()" id="calcularfechaparto">CALCULAR</a>
+        <a href="#" class="ui-btn ui-btn-inline"  id="calcularfechaparto">CALCULAR</a>
         
-         <h3> <div align="center" id="resfecha" style="background-color:#09F"></div></h3>
+         <h3> <div align="center" id="resfecha" style="background-color:#57E2FB"></div></h3>
         	
           
        	 </div>
@@ -144,103 +148,8 @@ function confirmar()
 <script>
 function embarazada()
 {
-			//r=r.toString();
-			//var dd=r.charAt(3)
-			//var mm =r.substring(0,2);
-			
-			var fecha=document.getElementById("calendario").value;
-			fecha=fecha.toString();
-			var di=fecha.substring(0,2);
-			var me=fecha.substring(3,5);
-			var yyy=fecha.substring(6,10);
-			
-			var dd=parseInt(di);
-			var mm=parseInt(me);
-			var yyy=parseInt(yyy);
-			
-			var d=parseInt(dd);
-			
-			for(var i=1;i<=287;i++)
-		{
-			switch(mm)
-			{
-			case 01:
-				var m=31;
-				var mes="ENERO"
-				break;
-			case 02:
-				var m=28;
-				var mes="FEBRERO"
-				break;
-			case 03:
-				var m=31;
-				var mes="MARZO"
-				break;
-			case 04:
-				var m=30;
-				var mes="ABRIL"
-				break;
-			case 05:
-				var m=31;
-				var mes="MAYO"
-				break;
-			case 06:
-				var m=30;
-				var mes="JUNIO"
-				break;
-			case 07:
-				var m=31;
-				var mes="JULIO"
-				break;
-			case 08:
-				var m=31;
-				var mes="AGOSTO"
-				break;
-			case 09:
-				var m=30;
-				var mes="SPTIEMBRE"
-				break;
-			case 10:
-				var m=31;
-				var mes="OCTUBRE"
-				break;
-			case 11:
-				var m=30;
-				var mes="NOVIEMBRE"
-				break;
-			case 12:
-				var m=31;
-				var mes="DICIEMBRE"
-				break;
-			}
-			var me;
 			
 			
-			if(m==d)
-			{
-				mm=mm+1;
-				d=0;
-			}
-			if(mm>12)
-			{
-				mm=1;
-				yyy=yyy+1;	
-			}
-			
-			d=d+1;
-			
-			if (i==280)
-			{
-					if (fecha=="")
-					{
-						alert("Seleccine una Fecha")	
-					}else{
-						document.getElementById("resfecha").innerHTML=d+"/"+mes+"/"+yyy;
-					}
-			}
-			
-			
-		}
 			
 			
 }
@@ -264,8 +173,8 @@ function embarazada()
          
          <div class="checkboxes">
 <fieldset data-role="controlgroup" data-iconpos="right">
-  <input name="chc1" id="chc1" type="checkbox"><label id="hc1" for="chc1" style="color:#F00">Edad (Menor 15 años ó mayor a 40 años)</label>
- <input name="chc2" id="chc2" type="checkbox"><label id="hc2" for="chc2" style="color:#F00">Analfabeta</label>
+  <input name="chc1" id="chc1" type="checkbox" class="caja"><label id="hc1" for="chc1" style="color:#F00">Edad (Menor 15 años ó mayor a 40 años)</label>
+ <input name="chc2" id="chc2" type="checkbox" class="caja"><label id="hc2" for="chc2" style="color:#F00">Analfabeta</label>
          
      </fieldset>
 </div>  
@@ -283,7 +192,7 @@ function embarazada()
         
               
         
-        </div>
+    
      
     <!-------------------------ANTECEDENTES PERSONALES-------------------------------------------->
     
@@ -306,11 +215,11 @@ function embarazada()
           
  <div class="checkboxes">
 			<fieldset data-role="controlgroup" data-iconpos="right">
-  <input name="capp1" id="capp1" type="checkbox"><label id="app1" for="capp1" style="color:#F00">TB Pulmonar)</label>
- 	<input name="capp2" id="capp2" type="checkbox"><label id="app2" for="capp2" style="color:#F00">Diabetes Mellitus</label>
-    <input name="capp3" id="capp3" type="checkbox"><label id="app3" for="capp3" style="color:#F00">Has crónica</label>
-     <input name="capp4" id="capp4" type="checkbox"><label id="app4" for="capp4" style="color:#F00">Cirujia Pélvica/Uterina</label>
-     <input name="capp5" id="capp5" type="checkbox"><label id="app5" for="capp5" style="color:#F00">Has crónica</label>
+  <input name="capp1" id="capp1" type="checkbox" class="caja"><label id="app1" for="capp1" style="color:#F00">TB Pulmonar)</label>
+ 	<input name="capp2" id="capp2" type="checkbox" class="caja"><label id="app2" for="capp2" style="color:#F00">Diabetes Mellitus</label>
+    <input name="capp3" id="capp3" type="checkbox" class="caja"><label id="app3" for="capp3" style="color:#F00">Has crónica</label>
+     <input name="capp4" id="capp4" type="checkbox" class="caja"><label id="app4" for="capp4" style="color:#F00">Cirujia Pélvica/Uterina</label>
+     <input name="capp5" id="capp5" type="checkbox" class="caja"><label id="app5" for="capp5" style="color:#F00">Has crónica</label>
      </fieldset>
 </div>  
           	
@@ -327,7 +236,7 @@ function embarazada()
         
               
         
-        </div>  
+      
         <!------------------------------------ANTECEDENTES GINECO----------------------------------->
         <div data-role="page" id="riesgoobstetricogineco">   
        		 <div data-role="header" data-position="fixed" data-tap-toggle="false"> 
@@ -346,17 +255,17 @@ function embarazada()
          
           <div class="checkboxes">
 			<fieldset data-role="controlgroup" data-iconpos="right">
- 	<input name="cago1" id="cago1" type="checkbox"><label id="ago1" for="cago1" style="color:#F00">Infertilidad</label>
-	<input name="cago2" id="cago2" type="checkbox"><label id="ago2" for="cago2" style="color:#F00">Primigesta o Multi Gesta</label>
-   <input name="cago3" id="cago3" type="checkbox"><label id="ago3" for="cago3" style="color:#F00">Aborto Previo</label>
-  <input name="cago4" id="cago4" type="checkbox"><label id="ago4" for="cago4" style="color:#F00">Cesárea Previa</label>
-     <input name="cago5" id="cago5" type="checkbox"><label id="ago5" for="cago5" style="color:#F00">2 ó Más Cesáreas</label>
-  <input name="cago6" id="cago6" type="checkbox"><label id="ago6" for="cago6" style="color:#F00">Periodo Intergenésico Corto</label>
-   <input name="cago71" id="cago71" type="checkbox"><label id="ago7" for="cago71" style="color:#F00">OBITOS(uno)</label>
-    <input name="cago8" id="cago8" type="checkbox"><label id="ago8" for="cago8" style="color:#F00">Perdida Gestacional Recurrente</label>
-    <input name="cago9" id="cago9" type="checkbox"><label id="ago9" for="cago9" style="color:#F00">RN Muerte En 1re Semana de Vida EU </label>
-     <input name="cago10" id="cago10" type="checkbox"><label id="ago10" for="cago10" style="color:#F00">RN con Peso menor 2500 gr</label>
-     <input name="cago11" id="cago11" type="checkbox"><label id="ago11" for="cago11" style="color:#F00">RN con Peso menor 2500 gr</label>
+ 	<input name="cago1" id="cago1" type="checkbox" class="caja"><label id="ago1" for="cago1" style="color:#F00">Infertilidad</label>
+	<input name="cago2" id="cago2" type="checkbox" class="caja"><label id="ago2" for="cago2" style="color:#F00">Primigesta o Multi Gesta</label>
+   <input name="cago3" id="cago3" type="checkbox" class="caja"><label id="ago3" for="cago3" style="color:#F00">Aborto Previo</label>
+  <input name="cago4" id="cago4" type="checkbox" class="caja"><label id="ago4" for="cago4" style="color:#F00">Cesárea Previa</label>
+     <input name="cago5" id="cago5" type="checkbox" class="caja"><label id="ago5" for="cago5" style="color:#F00">2 ó Más Cesáreas</label>
+  <input name="cago6" id="cago6" type="checkbox" class="caja"><label id="ago6" for="cago6" style="color:#F00">Periodo Intergenésico Corto</label>
+   <input name="cago71" id="cago71" type="checkbox" class="caja"><label id="ago7" for="cago71" style="color:#F00">OBITOS(uno)</label>
+    <input name="cago8" id="cago8" type="checkbox" class="caja"><label id="ago8" for="cago8" style="color:#F00">Perdida Gestacional Recurrente</label>
+    <input name="cago9" id="cago9" type="checkbox" class="caja"><label id="ago9" for="cago9" style="color:#F00">RN Muerte En 1re Semana de Vida EU </label>
+     <input name="cago10" id="cago10" type="checkbox" class="caja"><label id="ago10" for="cago10" style="color:#F00">RN con Peso menor 2500 gr</label>
+     <input name="cago11" id="cago11" type="checkbox" class="caja"><label id="ago11" for="cago11" style="color:#F00">RN con Peso menor 2500 gr</label>
      
      </fieldset>
 </div>  
@@ -372,7 +281,7 @@ function embarazada()
         </div>  
         
         </div>
-        </div>  
+       
         <!----------------------------------------------------EMBARAZO ACTUAL--------------------------->
         <div data-role="page" id="riesgoobstetricoembarazo">   
        		 <div data-role="header" data-position="fixed" data-tap-toggle="false"> 
@@ -390,18 +299,18 @@ function embarazada()
         
            <div class="checkboxes">
 			<fieldset data-role="controlgroup" data-iconpos="right">
- 	<input name="cea1" id="cea1" type="checkbox"><label id="ea1" for="cea1" style="color:#F00">Preeclampsia en Embarazo Anterior</label>
-	<input name="cea2" id="cea2" type="checkbox"><label id="ea2" for="cea2" style="color:#F00">Peso Mayor 80kg</label>
-   <input name="cea3" id="cea3" type="checkbox"><label id="ea3" for="cea3" style="color:#F00">Peso Menor 40Kg</label>
-  <input name="cea4" id="cea4" type="checkbox"><label id="ea4" for="cea4" style="color:#F00">Talla Menor 1.50cm</label>
-     <input name="cea5" id="cea5" type="checkbox"><label id="ea5" for="cea5" style="color:#F00">Fum Incierta</label>
-  <input name="cea6" id="cea6" type="checkbox"><label id="ea6" for="cea6" style="color:#F00">Sin Inmunización Antitetánica</label>
-   <input name="cea7" id="cea7" type="checkbox"><label id="ea7" for="cea7" style="color:#F00">Grupo Sanguinéo RH Negativo</label>
-    <input name="cea8" id="cea8" type="checkbox"><label id="ea8" for="cea8" style="color:#F00">HB menor 10mg/DL</label>
-    <input name="cea9" id="cea9" type="checkbox"><label id="ea9" for="cea9" style="color:#F00">VDRL Positivo</label>
-     <input name="cea10" id="cea10" type="checkbox"><label id="ea10" for="cea10" style="color:#F00">VIH Sida</label>
-     <input name="cea11" id="cea11" type="checkbox"><label id="ea11" for="cea11" style="color:#F00">IVU</label>
-     <input name="cea12" id="cea12" type="checkbox"><label id="ea12" for="cea12" style="color:#F00">Embarazo Múltiple</label>
+ 	<input name="cea1" id="cea1" type="checkbox" class="caja"><label id="ea1" for="cea1" style="color:#F00">Preeclampsia en Embarazo Anterior</label>
+	<input name="cea2" id="cea2" type="checkbox" class="caja"><label id="ea2" for="cea2" style="color:#F00">Peso Mayor 80kg</label>
+   <input name="cea3" id="cea3" type="checkbox" class="caja"><label id="ea3" for="cea3" style="color:#F00">Peso Menor 40Kg</label>
+  <input name="cea4" id="cea4" type="checkbox" class="caja"><label id="ea4" for="cea4" style="color:#F00">Talla Menor 1.50cm</label>
+     <input name="cea5" id="cea5" type="checkbox" class="caja"><label id="ea5" for="cea5" style="color:#F00">Fum Incierta</label>
+  <input name="cea6" id="cea6" type="checkbox" class="caja"><label id="ea6" for="cea6" style="color:#F00">Sin Inmunización Antitetánica</label>
+   <input name="cea7" id="cea7" type="checkbox" class="caja"><label id="ea7" for="cea7" style="color:#F00">Grupo Sanguinéo RH Negativo</label>
+    <input name="cea8" id="cea8" type="checkbox" class="caja"><label id="ea8" for="cea8" style="color:#F00">HB menor 10mg/DL</label>
+    <input name="cea9" id="cea9" type="checkbox" class="caja"><label id="ea9" for="cea9" style="color:#F00">VDRL Positivo</label>
+     <input name="cea10" id="cea10" type="checkbox" class="caja"><label id="ea10" for="cea10" style="color:#F00">VIH Sida</label>
+     <input name="cea11" id="cea11" type="checkbox" class="caja"><label id="ea11" for="cea11" style="color:#F00">IVU</label>
+     <input name="cea12" id="cea12" type="checkbox" class="caja"><label id="ea12" for="cea12" style="color:#F00">Embarazo Múltiple</label>
      </fieldset>
 </div>  
        	
@@ -415,7 +324,7 @@ function embarazada()
         </div>  
         
         </div>
-        </div>  
+   
          
          <!-----------------------------------EXAMEN CLINICO------------------------------------------->
          
@@ -435,13 +344,13 @@ function embarazada()
          
          <div class="checkboxes">
 			<fieldset data-role="controlgroup" data-iconpos="right">
- 	<input name="ceca1" id="ceca1" type="checkbox"><label id="eca1" for="ceca1" style="color:#F00">Exploración de Mamas Anormal</label>
-	<input name="ceca2" id="ceca2" type="checkbox"><label id="eca2" for="ceca2" style="color:#F00">Exploración de Pelvis Anormal</label>
-   <input name="ceca3" id="ceca3" type="checkbox"><label id="eca3" for="ceca3" style="color:#F00">Exploración de Cérvix Anormal</label>
-  <input name="ceca4" id="ceca4" type="checkbox"><label id="eca4" for="ceca4" style="color:#F00">T/A mayor 130/90 mmhg</label>
-     <input name="ceca5" id="ceca5" type="checkbox"><label id="eca5" for="ceca5" style="color:#F00">Altura Uterina Discordante</label>
-     <input name="ceca6" id="ceca6" type="checkbox"><label id="eca6" for="ceca6" style="color:#F00">FCF Menor 120X</label>
-     <input name="ceca7" id="ceca7" type="checkbox"><label id="eca7" for="ceca7" style="color:#F00">FCF Mayor 160X</label>
+ 	<input name="ceca1" id="ceca1" type="checkbox" class="caja"><label id="eca1" for="ceca1" style="color:#F00">Exploración de Mamas Anormal</label>
+	<input name="ceca2" id="ceca2" type="checkbox" class="caja"><label id="eca2" for="ceca2" style="color:#F00">Exploración de Pelvis Anormal</label>
+   <input name="ceca3" id="ceca3" type="checkbox" class="caja"><label id="eca3" for="ceca3" style="color:#F00">Exploración de Cérvix Anormal</label>
+  <input name="ceca4" id="ceca4" type="checkbox" class="caja"><label id="eca4" for="ceca4" style="color:#F00">T/A mayor 130/90 mmhg</label>
+     <input name="ceca5" id="ceca5" type="checkbox" class="caja"><label id="eca5" for="ceca5" style="color:#F00">Altura Uterina Discordante</label>
+     <input name="ceca6" id="ceca6" type="checkbox" class="caja"><label id="eca6" for="ceca6" style="color:#F00">FCF Menor 120X</label>
+     <input name="ceca7" id="ceca7" type="checkbox" class="caja"><label id="eca7" for="ceca7" style="color:#F00">FCF Mayor 160X</label>
  </fieldset>
  </div>
        		
@@ -458,7 +367,7 @@ function embarazada()
         </div>  
         
         </div>
-        </div>
+ 
         
         <!----------------------------------------------RESULTADORIESGO OBSTETRICO------------------------->
         
@@ -489,7 +398,7 @@ function embarazada()
         </div>  
         
         </div>
-        </div>  
+ 
         
         
         <!-------------------------------------recien nacido-------------------------------------------->
@@ -501,8 +410,10 @@ function embarazada()
        
        	 <div data-role="main" class="ui-content" >
          <div align="center" data-role="controlgroup" data-type="vertical">
-         	<a href="#capurrooreja" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right">CAPURRO</a>
-         <a href="#silvermantoraxsup" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right">SILVERMAN</a>
+       	<a href="#capurrooreja" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right">CAPURRO</a>
+       <a href="#silvertoraxsup" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right">SILVERMAN</a>
+       <a href="#apgar" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-star ui-btn-icon-right">APGAR</a>
+         </div>
          </div>
          
          <div data-role="footer" data-position="fixed" data-tap-toggle="false">
@@ -512,25 +423,21 @@ function embarazada()
         </div>  
         
         </div>
-        </div>  
+   
          <!------------------------------------SILVERMAN-------------------------------------------------->
          
-          <div data-role="page" id="silvermantoraxsup">   
-       		 <div data-role="header" data-position="fixed" data-tap-toggle="false"> 
-                
-             <div style="width:10%; float:left"><a href="#reciennaido" class="ui-btn ui-shadow ui-icon-arrow-l ui-btn-icon-right ui-btn-corner-all ui-btn-icon-notext"></a></div>
-             
-              <div style="width:80%; float:left"> <h4 align="center">TÓRAX SUPERIOR</h4></div>
-              
-               <div style="width:10%; float:left"></div> 
-        
-        	</div>
-       
-        <div data-role="main" class="ui-content" >
-         <div align="center" data-role="controlgroup" data-type="vertical">
-          <ul data-role="listview" data-split-icon="camera" data-split-theme="a" data-inset="true">
+         <div data-role="page" id="silvertoraxsup" >   
+
+      <div data-role="header" >
+       <h1>TORAX SUPERIOR</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+        <div style="width:80%">
+         <ul data-role="listview" data-split-icon="camera" data-split-theme="a" data-inset="true">
           <li>
-           <a href="#" class="preguntas_uno">
+           <a href="#silvertoraxint" class="preguntas_uno" style="background-color:#0F3">
             <img src="images/siverman/chest/chest0.jpg">
             <h2>Sincronizado</h2>
             <p>0</p>
@@ -540,193 +447,1723 @@ function embarazada()
             Ver imagen
            </a>
           </li>
-          
-         
-         
-          
+      
           <li>
-           <a href="#" class="preguntas_uno">
+           <a href="#silvertoraxint" class="preguntas_uno" style="background-color:#FF0">
             <img src="images/siverman/chest/lag1.jpg">
             <h2>En Inspiración</h2>
             <p>1</p>
            </a>
        
-           <a href="#imagen_uno" data-rel="popup" data-position-to="window" data-transition="pop">
+           <a href="#imagen_dos" data-rel="popup" data-position-to="window" data-transition="pop">
             Ver imagen
            </a>
-          </li>
-          
-          
-           <li>
-           <a href="#" class="preguntas_uno">
-            <img src="images/siverman/chest/seesaw2.jpg">
-            <h2>Siempre Visible</h2>
-            <p>2</p>
-           </a>
-       
-           <a href="#imagen_uno" data-rel="popup" data-position-to="window" data-transition="pop">
-            Ver imagen
-           </a>
-          </li>
-          
-          
-          </ul>
-         
-         
-         </div>
-         </div>
-        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
-       <div data-role="navbar">
-     		 <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
-       </div>  
-        </div>  
-        
-        </div>
-        </div>
-         
-  <!------------------------------------------------TORAX INTERIOR-------------------------------------------->
-      <div data-role="page" id="silvermantoraxint">   
-       		 <div data-role="header" data-position="fixed" data-tap-toggle="false"> 
-                
-             <div style="width:10%; float:left"><a href="#silvermantoraxsup" class="ui-btn ui-shadow ui-icon-arrow-l ui-btn-icon-right ui-btn-corner-all ui-btn-icon-notext"></a></div>
-             
-              <div style="width:80%; float:left"> <h4 align="center">TÓRAX INTERIOR</h4></div>
-              
-               <div style="width:10%; float:left"></div> 
-        
-        	</div>
-       
-        <div data-role="main" class="ui-content" >
-         <div align="center" data-role="controlgroup" data-type="vertical">
-          <ul data-role="listview" data-split-icon="camera" data-split-theme="a" data-inset="true">
+          </li>      
+      
           <li>
-           <a href="#" class="preguntas_dos">
+           <a href="#silvertoraxint" class="preguntas_uno" style="background-color:#F00">
+            <img src="images/siverman/chest/seesaw2.jpg">
+            <h2 style="color:#FFF">Siempre Visible</h2>
+            <p style="color:#FFF">2</p>
+           </a>
+       
+           <a href="#imagen_tres" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+        </ul>
+       
+
+        <div data-role="popup" id="imagen_uno" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/siverman/chest/chest0.jpg" style="max-height:300px;" >
+        </div>
+    
+        <div data-role="popup" id="imagen_dos" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/siverman/chest/lag1.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="imagen_tres" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/siverman/chest/seesaw2.jpg" style="max-height:300px;" >
+        </div>
+
+
+
+        </div>
+       </div>
+      </div>
+        
+        
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+      <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
+       </div>
+      </div>        
+        
+     </div>
+  <!-----------------------------------torax nterior------------------------------------------------->
+  
+      <div data-role="page" id="silvertoraxint" >   
+
+      <div data-role="header" >
+       <h1>TÓRAX INTERIOR </h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+        <div style="width:80%">
+         <ul data-role="listview" data-split-icon="camera" data-split-theme="a" data-inset="true">
+          <li>
+           <a href="#silverretcif" class="preguntas_dos" style="background-color:#0F0">
             <img src="images/siverman/retracciones/sin0.jpg">
             <h2>Sin Retracción</h2>
             <p>0</p>
            </a>
        
-           <a href="#imagen_uno" data-rel="popup" data-position-to="window" data-transition="pop">
+           <a href="#imagen_4" data-rel="popup" data-position-to="window" data-transition="pop">
             Ver imagen
            </a>
           </li>
-          
-         
-         
-          
+      
           <li>
-           <a href="#" class="preguntas_dos">
-            <img src="images/siverman/chest/lag1.jpg">
-            <h2>En Inspiración</h2>
+           <a href="#silverretcif" class="preguntas_dos" style="background-color:#FF0">
+            <img src="images/siverman/retracciones/solo1.jpg">
+            <h2>Solo Visible</h2>
             <p>1</p>
            </a>
        
-           <a href="#imagen_uno" data-rel="popup" data-position-to="window" data-transition="pop">
+           <a href="#imagen_5" data-rel="popup" data-position-to="window" data-transition="pop">
             Ver imagen
            </a>
-          </li>
-          
-          
-           <li>
-           <a href="#" class="preguntas_dos">
-            <img src="images/siverman/chest/seesaw2.jpg">
-            <h2>Siempre Visible</h2>
-            <p>2</p>
-           </a>
-       
-           <a href="#imagen_uno" data-rel="popup" data-position-to="window" data-transition="pop">
-            Ver imagen
-           </a>
-          </li>
-          
-          
-          </ul>
-         
-         
-         </div>
-         </div>
-        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
-       <div data-role="navbar">
-     		 <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
-       </div>  
-        </div>  
-        
-        </div>
-        </div>
-         
-     <!---------------------------------------------------retraccion silbuidea------------------------------------>
-     
-     
-          <div data-role="page" id="silvermanretrxif">   
-       		 <div data-role="header" data-position="fixed" data-tap-toggle="false"> 
-                
-             <div style="width:10%; float:left"><a href="#reciennaido" class="ui-btn ui-shadow ui-icon-arrow-l ui-btn-icon-right ui-btn-corner-all ui-btn-icon-notext"></a></div>
-             
-              <div style="width:80%; float:left"> <h4 align="center">RETRAXIÓN XIFOIDEA</h4></div>
-              
-               <div style="width:10%; float:left"></div> 
-        
-        	</div>
-       
-        <div data-role="main" class="ui-content" >
-         <div align="center" data-role="controlgroup" data-type="vertical">
-          <ul data-role="listview" data-split-icon="camera" data-split-theme="a" data-inset="true">
+          </li>      
+      
           <li>
-           <a href="#" class="preguntas_tres">
+           <a href="#silverretcif" class="preguntas_dos" style="background-color:#F00">
+            <img src="images/siverman/retracciones/mar2.jpg">
+            <h2 style="color:#FFF">Marcado</h2>
+            <p style="color:#FFF">2</p>
+           </a>
+       
+           <a href="#imagen_6" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+        </ul>
+       
+
+        <div data-role="popup" id="imagen_4" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/siverman/retracciones/sin0.jpg" style="max-height:300px;" >
+        </div>
+    
+        <div data-role="popup" id="imagen_5" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/siverman/retracciones/solo1.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="imagen_6" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/siverman/retracciones/mar2.jpg" style="max-height:300px;" >
+        </div>
+
+
+
+        </div>
+       </div>
+      </div>
+        
+        
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+      <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
+       </div>
+      </div>        
+        
+     </div>
+     
+ <!----------------------------------------------retraccion xifoidea----------------------------------->
+ 
+ 
+   <div data-role="page" id="silverretcif" >   
+
+      <div data-role="header" >
+       <h1>RETRACCIÓN XIFOIDEA</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+        <div style="width:80%">
+         <ul data-role="listview" data-split-icon="camera" data-split-theme="a" data-inset="true">
+          <li>
+           <a href="#silveraleteo" class="preguntas_tres" style="background-color:#0F0">
             <img src="images/siverman/RETRACCION/ninguno0.jpg">
             <h2>Ninguno</h2>
             <p>0</p>
            </a>
        
-           <a href="#imagen_uno" data-rel="popup" data-position-to="window" data-transition="pop">
+           <a href="#imagen_7" data-rel="popup" data-position-to="window" data-transition="pop">
             Ver imagen
            </a>
           </li>
-          
-         
-         
-          
+      
           <li>
-           <a href="#" class="preguntas_uno">
+           <a href="#silveraleteo" class="preguntas_tres" style="background-color:#FF0">
             <img src="images/siverman/RETRACCION/solo1.jpg">
             <h2>Solo Visible</h2>
             <p>1</p>
            </a>
        
-           <a href="#imagen_uno" data-rel="popup" data-position-to="window" data-transition="pop">
+           <a href="#imagen_8" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>      
+      
+          <li>
+           <a href="#silveraleteo" class="preguntas_tres" style="background-color:#F00">
+            <img src="images/siverman/RETRACCION/marcado2.jpg">
+            <h2 style="color:#FFF">Marcado</h2>
+            <p style="color:#FFF">2</p>
+           </a>
+       
+           <a href="#imagen_9" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+        </ul>
+       
+
+        <div data-role="popup" id="imagen_7" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/siverman/RETRACCION/ninguno0.jpg" style="max-height:300px;" >
+        </div>
+    
+        <div data-role="popup" id="imagen_8" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/siverman/RETRACCION/solo1.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="imagen_9" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/siverman/RETRACCION/marcado2.jpg" style="max-height:300px;" >
+        </div>
+
+
+
+        </div>
+       </div>
+      </div>
+        
+        
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+        <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
+       </div>
+      </div>        
+        
+     </div>
+     
+     <!---------------------------------------Aleteo Nasal----------------------------------------------->
+     
+     
+      <div data-role="page" id="silveraleteo" >   
+
+      <div data-role="header" >
+       <h1>ALETEO NASAL</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+        <div style="width:80%">
+         <ul data-role="listview" data-split-icon="camera" data-split-theme="a" data-inset="true">
+          <li>
+           <a href="#silverquejidona" class="preguntas_cuatro" style="background-color:#0F0">
+            <img src="images/siverman/aleteo/ninguno0.jpg">
+            <h2>Ninguno</h2>
+            <p>0</p>
+           </a>
+       
+           <a href="#imagen_10" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+      
+          <li>
+           <a href="#silverquejidona" class="preguntas_cuatro" style="background-color:#FF0">
+            <img src="images/siverman/aleteo/minimo1.jpg">
+            <h2>Minimo</h2>
+            <p>1</p>
+           </a>
+       
+           <a href="#imagen_11" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>      
+      
+          <li>
+           <a href="#silverquejidona" class="preguntas_cuatro" style="background-color:#F00">
+            <img src="images/siverman/aleteo/marcado2.jpg">
+            <h2 style="color:#FFF">Marcado</h2>
+            <p style="color:#FFF">2</p>
+           </a>
+       
+           <a href="#imagen_12" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+        </ul>
+       
+
+        <div data-role="popup" id="imagen_10" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/siverman/aleteo/ninguno0.jpg" style="max-height:300px;" >
+        </div>
+    
+        <div data-role="popup" id="imagen_11" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/siverman/aleteo/minimo1.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="imagen_12" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/siverman/aleteo/marcado2.jpg" style="max-height:300px;" >
+        </div>
+
+
+
+        </div>
+       </div>
+      </div>
+        
+        
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+       <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
+       </div>
+      </div>        
+        
+     </div>
+     
+     <!---------------------------------------quejido nasal------------------------------------------------>
+     
+      <div data-role="page" id="silverquejidona" >   
+
+      <div data-role="header" >
+       <h1>QUJIDO NASAL</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+        <div style="width:80%">
+         <ul data-role="listview" data-split-icon="camera" data-split-theme="a" data-inset="true">
+          <li>
+           <a href="#silverres" class="preguntas_cinco" style="background-color:#0F0">
+            <img  src="images/siverman/quejido/ninguno0.jpg">
+            <h2>Ninguno</h2>
+            <p>0</p>
+           </a>
+       
+           <a href="#imagen_13" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+      
+          <li>
+           <a href="#silverres" class="preguntas_cinco" style="background-color:#FF0">
+            <img src="images/siverman/quejido/solo1.jpg">
+            <h2>Solo por Esteloscopio</h2>
+            <p>1</p>
+           </a>
+       
+           <a href="#imagen_14" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>      
+      
+          <li>
+           <a href="#silverres" class="preguntas_cinco" style="background-color:#F00">
+            <img src="images/siverman/quejido/audible2.jpg">
+            <h2 style="color:#FFF">Audible al Oido</h2>
+            <p style="color:#FFF">2</p>
+           </a>
+       
+           <a href="#imagen_15" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+        </ul>
+       
+
+        <div data-role="popup" id="imagen_13" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/siverman/quejido/ninguno0.jpg" style="max-height:300px;" >
+        </div>
+    
+        <div data-role="popup" id="imagen_14" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/siverman/quejido/solo1.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="imagen_15" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/siverman/quejido/audible2.jpg" style="max-height:300px;" >
+        </div>
+
+
+
+        </div>
+       </div>
+      </div>
+        
+        
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+       <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
+       </div>
+      </div>        
+        
+     </div>
+     
+     
+     <!------------------------------------reultado silverman-------------------------------------------------->
+     
+     
+      <div data-role="page" id="silverres" >   
+
+      <div data-role="header" >
+       <h1>REULTADO</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+        <div style="width:80%">
+        
+   
+       
+       <font face="Arial Black, Gadget, sans-serif" size="4"><div id="ressilver" style="background-color:#02B1D7"></div></font>
+			<br>
+        </div>
+        <font face="Arial Black, Gadget, sans-serif" size="5"><div id="rangosilver"></div></font>
+       </div>
+      </div>
+        
+        
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+        <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
+       </div>
+      </div>        
+        
+     </div>
+     
+     <!-----------------------------------------------CAPURRO------------------------------------->
+     
+      <div data-role="page" id="capurrooreja" >   
+
+      <div data-role="header" >
+       <h1>FORMA DE LA OREJA(PABELLÓN)</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+        <div style="width:80%">
+         <ul data-role="listview" data-split-icon="camera" data-split-theme="a" data-inset="true">
+          <li>
+           <a href="#capurroglandula" class="cappreguntas_uno" style="background-color:#F00">
+            <img src="images/capurro/pabellon/aplanada.jpg">
+            <h2 style="color:#FFF">Aplanada sin incurvatura</h2>
+            <p style="color:#FFF">0</p>
+           </a>
+       
+           <a href="#capimagen_uno" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+      
+          <li>
+           <a href="#capurroglandula" class="cappreguntas_uno" style="background-color:#FC0">
+            <img src="images/capurro/pabellon/superior.jpg">
+            <h2>Borde Superior Parcialmente Incurvado</h2>
+            <p>8</p>
+           </a>
+       
+           <a href="#capimagen_dos" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>      
+      
+          <li>
+           <a href="#capurroglandula" class="cappreguntas_uno" style="background-color:#FF0">
+            <img src="images/capurro/pabellon/todoborde.jpg">
+            <h2>Todo el Borde Sup Incurvado</h2>
+            <p>16</p>
+           </a>
+       
+           <a href="#capimagen_tres" data-rel="popup" data-position-to="window" data-transition="pop">
             Ver imagen
            </a>
           </li>
           
           
            <li>
-           <a href="#" class="preguntas_uno">
-            <img src="images/siverman/chest/seesaw2.jpg">
-            <h2>Marcado</h2>
-            <p>2</p>
+           <a href="#capurroglandula" class="cappreguntas_uno" style="background-color:#0F0">
+            <img src="images/capurro/pabellon/incurvadopabellon.jpg">
+            <h2>Pabellón Totalmente Incurvado</h2>
+            <p>24</p>
            </a>
        
-           <a href="#imagen_uno" data-rel="popup" data-position-to="window" data-transition="pop">
+           <a href="#capimagen_cuatro" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+        </ul>
+       
+
+        <div data-role="popup" id="capimagen_uno" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/pabellon/aplanada.jpg" style="max-height:300px;" >
+        </div>
+    
+        <div data-role="popup" id="capimagen_dos" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/pabellon/superior.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="capimagen_tres" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/pabellon/todoborde.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="capimagen_cuatro" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/pabellon/incurvadopabellon.jpg" style="max-height:300px;" >
+        </div>
+
+
+        </div>
+       </div>
+      </div>
+        
+        
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+       <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
+       </div>
+      </div>        
+        
+     </div>
+     <!-----------------------------------------------TAMAÑO DE LA GLANDULA------------------------------->
+     
+     
+     <div data-role="page" id="capurroglandula" >   
+
+      <div data-role="header" >
+       <h1>TAMAÑO DE LA GLANDULA</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+        <div style="width:80%">
+         <ul data-role="listview" data-split-icon="camera" data-split-theme="a" data-inset="true">
+          <li>
+           <a href="#capurropezon" class="cappreguntas_2" style="background-color:#F00">
+            <img src="images/capurro/glandula/palpable.jpg">
+            <h2 style="color:#FFF">No Palpable</h2>
+            <p style="color:#FFF">0</p>
+           </a>
+       
+           <a href="#capimagen_5" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+      
+          <li>
+           <a href="#capurropezon" class="cappreguntas_2" style="background-color:#FC0">
+            <img src="images/capurro/glandula/menor5.jpg">
+            <h2>Palpable Menor de 5 mm.</h2>
+            <p>5</p>
+           </a>
+       
+           <a href="#capimagen_6" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>      
+      
+          <li>
+           <a href="#capurropezon" class="cappreguntas_2" style="background-color:#FF0">
+            <img src="images/capurro/glandula/entre5y10.jpg">
+            <h2>Palpable Entre 5 y 10mm.</h2>
+            <p>10</p>
+           </a>
+       
+           <a href="#capimagen_7" data-rel="popup" data-position-to="window" data-transition="pop">
             Ver imagen
            </a>
           </li>
           
           
-          </ul>
-         
-         
-         </div>
-         </div>
-        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
-       <div data-role="navbar">
-     		 <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
-       </div>  
-        </div>  
+           <li>
+           <a href="#capurropezon" class="cappreguntas_2" style="background-color:#0F0">
+            <img src="images/capurro/glandula/mayor10.jpg">
+            <h2>Palpable Mayor a 10mm.</h2>
+            <p>15</p>
+           </a>
+       
+           <a href="#capimagen_8" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+        </ul>
+       
+
+        <div data-role="popup" id="capimagen_5" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/glandula/palpable.jpg" style="max-height:300px;" >
+        </div>
+    
+        <div data-role="popup" id="capimagen_6" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/glandula/menor5.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="capimagen_7" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/glandula/entre5y10.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="capimagen_8" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/glandula/mayor10.jpg" style="max-height:300px;" >
+        </div>
+
+
+        </div>
+       </div>
+      </div>
         
-        </div>
-        </div>
-         
+        
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+       <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
+       </div>
+      </div>        
+        
+     </div>
      
+     <!-----------------------------------------FORMACION DEL PESON---------------------------------->
+     
+          
+     <div data-role="page" id="capurropezon" >   
+
+      <div data-role="header" >
+       <h1>FORMACIÓN DEL PEZÓN</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+        <div style="width:80%">
+         <ul data-role="listview" data-split-icon="camera" data-split-theme="a" data-inset="true">
+          <li>
+           <a href="#capurrotex" class="cappreguntas_3" style="background-color:#F00">
+            <img src="images/capurro/pezon/apenavicible.jpg">
+            <h2 style="color:#FFF">Apenas Visible Sin Areola</h2>
+            <p style="color:#FFF">0</p>
+           </a>
+       
+           <a href="#capimagen_9" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+      
+          <li>
+           <a href="#capurrotex" class="cappreguntas_3" style="background-color:#FC0">
+            <img src="images/capurro/pezon/diametro75lineachata.jpg">
+            <h2>Diametro Menor De 7.5mm Areola Lisa y Chata</h2>
+            <p>5</p>
+           </a>
+       
+           <a href="#capimagen_10" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>      
+      
+          <li>
+           <a href="#capurrotex" class="cappreguntas_3" style="background-color:#FF0">
+            <img src="images/capurro/pezon/bordenolevantado.jpg">
+            <h2>Diametro Mayor De 7.5mm Areola Punteada(Borde No Elevado)</h2>
+            <p>10</p>
+           </a>
+       
+           <a href="#capimagen_11" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+          
+          
+           <li>
+           <a href="#capurrotex" class="cappreguntas_3" style="background-color:#0F0">
+            <img src="images/capurro/pezon/bordelevantado.jpg">
+            <h2>Diametro Mayor De 7.5mm Areola Punteada(Borde Elevado)</h2>
+            <p>15</p>
+           </a>
+       
+           <a href="#capimagen_12" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+        </ul>
+       
+
+        <div data-role="popup" id="capimagen_9" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/pezon/apenavicible.jpg" style="max-height:300px;" >
+        </div>
+    
+        <div data-role="popup" id="capimagen_10" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/pezon/diametro75lineachata.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="capimagen_11" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/pezon/bordenolevantado.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="capimagen_12" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/pezon/bordelevantado.jpg" style="max-height:300px;" >
+        </div>
+
+
+        </div>
+       </div>
+      </div>
+        
+        
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+        <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
+       </div>
+      </div>        
+        
+     </div>
+     
+     <!-------------------------------TEXTURA DE LA PUEL----------------------------------------->
+     
+            
+     <div data-role="page" id="capurrotex" >   
+
+      <div data-role="header" >
+       <h1>TEXTURA DE LA PIEL</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+        <div style="width:80%">
+         <ul data-role="listview" data-split-icon="camera" data-split-theme="a" data-inset="true">
+          <li>
+           <a href="#capurroplant" class="cappreguntas_4" style="background-color:#F00">
+            <img src="images/capurro/texturapiel/muyfina.jpg">
+            <h2 style="color:#FFF">Muy Fina Gelatinosa</h2>
+            <p style="color:#FFF">0</p>
+           </a>
+       
+           <a href="#capimagen_13" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+      
+          <li>
+           <a href="#capurroplant" class="cappreguntas_4" style="background-color:#FC0">
+            <img src="images/capurro/texturapiel/finalisa.jpg">
+            <h2>Fina Lisa</h2>
+            <p>5</p>
+           </a>
+       
+           <a href="#capimagen_14" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>      
+      
+          <li>
+           <a href="#capurroplant" class="cappreguntas_4" style="background-color:#FC6">
+            <img src="images/capurro/texturapiel/masgruesa.jpg">
+            <h2>Mas Gruesa Discreta Descamación Superficial</h2>
+            <p>10</p>
+           </a>
+       
+           <a href="#capimagen_15" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+          
+          
+           <li>
+           <a href="#capurroplant" class="cappreguntas_4" style="background-color:#FF0">
+            <img src="images/capurro/texturapiel/gruesagrietas.jpg">
+            <h2>Gruesa Grietas Superficiales Descamación de Manos y Pies</h2>
+            <p>15</p>
+           </a>
+       
+           <a href="#capimagen_16" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+          
+             <li>
+           <a href="#capurroplant" class="cappreguntas_4" style="background-color:#0F0">
+            <img src="images/capurro/texturapiel/gruesagrietasape.jpg">
+            <h2>Gruesa Grieta Profundas Apergaminadas</h2>
+            <p>20</p>
+           </a>
+       
+           <a href="#capimagen_17" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+          
+        </ul>
+       
+
+        <div data-role="popup" id="capimagen_13" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/texturapiel/muyfina.jpg" style="max-height:300px;" >
+        </div>
+    
+        <div data-role="popup" id="capimagen_14" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/texturapiel/finalisa.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="capimagen_15" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/texturapiel/masgruesa.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="capimagen_16" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/texturapiel/gruesagrietas.jpg" style="max-height:300px;" >
+        </div>
+
+
+		<div data-role="popup" id="capimagen_17" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/texturapiel/gruesagrietasape.jpg" style="max-height:300px;" >
+        </div>
+
+        </div>
+       </div>
+      </div>
+        
+        
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+      <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
+       </div>
+      </div>        
+        
+     </div>
+     <!------------------------------------------PLIEGES PLANTALES----------------------------------------->
+     
+     
+                 
+     <div data-role="page" id="capurroplant" >   
+
+      <div data-role="header" >
+       <h1>PLIEGUES PLANTARES</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+        <div style="width:80%">
+         <ul data-role="listview" data-split-icon="camera" data-split-theme="a" data-inset="true">
+          <li>
+           <a href="#capres" class="cappreguntas_5" style="background-color:#F00">
+            <img src="images/capurro/plantares/sinpliegues.jpg">
+            <h2 style="color:#FFF">Sin Pliegues</h2>
+            <p style="color:#FFF">0</p>
+           </a>
+       
+           <a href="#capimagen_18" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+      
+          <li>
+           <a href="#capres" class="cappreguntas_5" style="background-color:#FC0">
+            <img src="images/capurro/plantares/marcasmaldefinidas.jpg">
+            <h2>Marcas Mal Definidas en la Mitad Anterior</h2>
+            <p>5</p>
+           </a>
+       
+           <a href="#capimagen_19" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>      
+      
+          <li>
+           <a href="#capres" class="cappreguntas_5" style="background-color:#FC6">
+            <img src="images/capurro/plantares/marcasbiendefinidas.jpg">
+            <h2>Marcas Bien Definidas en la Mitad Anterior, Surcos En Mitad Anterior</h2>
+            <p>10</p>
+           </a>
+       
+           <a href="#capimagen_20" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+          
+          
+           <li>
+           <a href="#capres" class="cappreguntas_5" style="background-color:#FF0">
+            <img src="images/capurro/plantares/surcos.jpg">
+            <h2>Surcos en la Mitad Anterior</h2>
+            <p>15</p>
+           </a>
+       
+           <a href="#capimagen_21" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+          
+             <li>
+           <a href="#capres" class="cappreguntas_5" style="background-color:#0F0">
+            <img src="images/capurro/plantares/surcosenmas.jpg">
+            <h2>Surcos en Más de la Mitad Anterior</h2>
+            <p>20</p>
+           </a>
+       
+           <a href="#capimagen_22" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+          
+        </ul>
+       
+
+        <div data-role="popup" id="capimagen_18" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/plantares/sinpliegues.jpg" style="max-height:300px;" >
+        </div>
+    
+        <div data-role="popup" id="capimagen_19" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/plantares/marcasmaldefinidas.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="capimagen_20" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/plantares/marcasbiendefinidas.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="capimagen_21" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/plantares/surcos.jpg" style="max-height:300px;" >
+        </div>
+
+
+		<div data-role="popup" id="capimagen_22" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/plantares/surcosenmas.jpg" style="max-height:300px;" >
+        </div>
+
+        </div>
+       </div>
+      </div>
+        
+        
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+       <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
+       </div>
+      </div>        
+        
+     </div>
+     
+     
+         <!--------------------------------SIGNO DE BUFANDA---------------------------------------------------->
+         <div data-role="page" id="capurrobufanda" >   
+
+      <div data-role="header" >
+       <h1>SIGNO DE LA BUFANDA</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+        <div style="width:80%">
+         <ul data-role="listview" data-split-icon="camera" data-split-theme="a" data-inset="true">
+          <li>
+           <a href="#capurrocabeza" class="cappreguntas_6" style="background-color:#F00">
+            <img src="images/capurro/bufanda/alcanzalineaauxiliar.jpg">
+            <h2 style="color:#FFF">El Codo Queda al Nivel del Peson Opuesto</h2>
+            <p style="color:#FFF">0</p>
+           </a>
+       
+           <a href="#capimagen_27" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+      
+          <li>
+           <a href="#capurrocabeza" class="cappreguntas_6" style="background-color:#FC0">
+            <img src="images/capurro/bufanda/lineaauxiliaranterior.jpg">
+            <h2>El Codo Queda a Nivel del Apendice Xifoides</h2>
+            <p>6</p>
+           </a>
+       
+           <a href="#capimagen_28" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>      
+      
+          <li>
+           <a href="#capurrocabeza" class="cappreguntas_6" style="background-color:#FF0">
+            <img src="images/capurro/bufanda/alcanzalineamedia.jpg">
+            <h2>El Codo Queda al Nivel del Pezón del Mismo Lado</h2>
+            <p>12</p>
+           </a>
+       
+           <a href="#capimagen_29" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+          
+          
+           <li>
+           <a href="#capurrocabeza" class="cappreguntas_6" style="background-color:#0F0">
+            <img src="images/capurro/bufanda/alcanzalineamedia1.jpg">
+            <h2>El Codo Queda en la Linea Axila del Mismo Lado</h2>
+            <p>18</p>
+           </a>
+       
+           <a href="#capimagen_30" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+          
+            
+        </ul>
+       
+
+        <div data-role="popup" id="capimagen_23" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/bufanda/alcanzalineaauxiliar.jpg" style="max-height:300px;" >
+        </div>
+    
+        <div data-role="popup" id="capimagen_24" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/bufanda/lineaauxiliaranterior.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="capimagen_25" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/bufanda/alcanzalineamedia.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="capimagen_26" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/bufanda/alcanzalineamedia1.jpg" style="max-height:300px;" >
+        </div>
+
+
+		
+
+        </div>
+       </div>
+      </div>
+        
+        
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+        <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
+       </div>
+      </div>        
+        
+     </div>
+     
+     
+            <!--------------------------CABEZA EN GOTA----------------------------------------------->     
+     <div data-role="page" id="capurrocabeza" >   
+
+      <div data-role="header" >
+       <h1>SIGNO CABEZA EN GOTA</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+        <div style="width:80%">
+         <ul data-role="listview" data-split-icon="camera" data-split-theme="a" data-inset="true">
+          <li>
+           <a href="#capres" class="cappreguntas_7" style="background-color:#F00">
+            <img src="images/capurro/gota/def.jpg">
+            <h2 style="color:#FFF">Deflexión Total de la Cabeza álgunos Mayores de 270°</h2>
+            <p style="color:#FFF">0</p>
+           </a>
+       
+           <a href="#capimagen_27" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+      
+          <li>
+           <a href="#capres" class="cappreguntas_7" style="background-color:#FC0">
+            <img src="images/capurro/gota/deflexion.jpg">
+            <h2>Control Céfatico Parcial Angulo Entre 180°-270°</h2>
+            <p>4</p>
+           </a>
+       
+           <a href="#capimagen_28" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>      
+      
+          <li>
+           <a href="#capres" class="cappreguntas_7" style="background-color:#FF0">
+            <img src="images/capurro/gota/180gradaos.jpg">
+            <h2>Capaz de Mantener Cabeza en Linea con el Cuerpo 180°</h2>
+            <p>8</p>
+           </a>
+       
+           <a href="#capimagen_29" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+          
+          
+           <li>
+           <a href="#capres" class="cappreguntas_7" style="background-color:#0F0">
+            <img src="images/capurro/gota/123scsdf.jpg">
+            <h2>Lleva la Cabeza Anterior al  Cuerpo Ángulo Menor 180°</h2>
+            <p>12</p>
+           </a>
+       
+           <a href="#capimagen_30" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+          
+            
+        </ul>
+       
+
+        <div data-role="popup" id="capimagen_27" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/gota/def.jpg" style="max-height:300px;" >
+        </div>
+    
+        <div data-role="popup" id="capimagen_28" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/gota/deflexion.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="capimagen_29" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/gota/180gradaos.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="capimagen_30" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/capurro/gota/123scsdf.jpg" style="max-height:300px;" >
+        </div>
+
+
+		
+
+        </div>
+       </div>
+      </div>
+        
+        
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+       <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
+       </div>
+      </div>        
+        
+     </div>
+     
+    
+     
+     <!---------------------------------------RESULTADO CAPURRO-------------------------------------------->
+       <div data-role="page" id="capres" >   
+
+      <div data-role="header" >
+       <h1>RESULTADO</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+        <div style="width:80%">
+        
+   
+   <font face="Arial Black, Gadget, sans-serif" size="5"><div id="tipocapurro" style="background-color:#1ABCEC"></div></font>
+		<br>       
+       <font face="Arial Black, Gadget, sans-serif" size="4"><div id="resultadocap" style="background-color:#1ABCEC"></div></font>
+			<br>
+        </div>
+        
+        
+        <br>
+        
+        <font face="Arial Black, Gadget, sans-serif" size="4"><div id="rangocap"></div></font>
+        <br>
+         <div align="center" id="btncap"><a href="#capurrobufanda" id="resultadocap" class="ui-btn ui-shadow ui-icon-bars ui-btn-icon-right ui-btn-corner-all ui-btn-inline">SEGUIR TEST</a></div>
+         
+       </div>
+      </div>
+        
+        
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+        <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
+       </div>
+      </div>        
+        
+     </div>
+     
+     <!----------------------------APGAR----------------------------------------->
+     
+      <div data-role="page" id="apgar" >   
+
+      <div data-role="header" >
+       <h1>FRECUENCIA CARDIACA</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+        <div style="width:80%">
+         <ul data-role="listview" data-split-icon="camera" data-split-theme="a" data-inset="true">
+          <li>
+           <a href="#apgaresfr" class="frepreguntas_1" style="background-color:#F00">
+            <img src="images/apgar/frecuenciacardiaca/sinlatido0.jpg">
+            <h2 style="color:#FFF">Ausente</h2>
+            <p style="color:#FFF">0</p>
+           </a>
+       
+           <a href="#freimagen_1" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+      
+          <li>
+           <a href="#apgaresfr" class="frepreguntas_1" style="background-color:#FF0">
+            <img src="images/apgar/frecuenciacardiaca/menor1.jpg">
+            <h2>Menor a 100</h2>
+            <p>1</p>
+           </a>
+       
+           <a href="#freimagen_2" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>      
+      
+          <li>
+           <a href="#apgaresfr" class="frepreguntas_1" style="background-color:#0F0">
+            <img src="images/apgar/frecuenciacardiaca/mayor.jpg">
+            <h2>Mayor a 100</h2>
+            <p>2</p>
+           </a>
+       
+           <a href="#freimagen_3" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+             
+        </ul>
+       
+
+        <div data-role="popup" id="freimagen_1" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/apgar/frecuenciacardiaca/sinlatido0.jpg" style="max-height:300px;" >
+        </div>
+    
+        <div data-role="popup" id="freimagen_2" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/apgar/frecuenciacardiaca/menor1.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="freimagen_3" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/apgar/frecuenciacardiaca/mayor.jpg" style="max-height:300px;" >
+        </div>
+
+
+        </div>
+       </div>
+      </div>
+        
+        
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+       <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
+       </div>
+      </div>        
+        
+     </div>
+     <!-----------------------esefuerzo respiratorio----------------------------------->
+     
+       <div data-role="page" id="apgaresfr" >   
+
+      <div data-role="header" >
+       <h1>FRECUENCIA CARDIACA</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+        <div style="width:80%">
+         <ul data-role="listview" data-split-icon="camera" data-split-theme="a" data-inset="true">
+          <li>
+           <a href="#apgartomusbe" class="frepreguntas_2" style="background-color:#F00">
+            <img src="images/apgar/esfuerzoresp/ausente0.jpg">
+            <h2 style="color:#FFF">Ausente</h2>
+            <p style="color:#FFF">0</p>
+           </a>
+       
+           <a href="#freimagen_4" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+      
+          <li>
+           <a href="#apgartomusbe" class="frepreguntas_2" style="background-color:#FF0">
+            <img src="images/apgar/esfuerzoresp/debil.jpg">
+            <h2>Débil, Irregular</h2>
+            <p>1</p>
+           </a>
+       
+           <a href="#freimagen_5" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>      
+      
+          <li>
+           <a href="#apgartomusbe" class="frepreguntas_2" style="background-color:#0F0">
+            <img src="images/apgar/esfuerzoresp/llanto.jpg">
+            <h2>Llanto Vigoroso</h2>
+            <p>2</p>
+           </a>
+       
+           <a href="#freimagen_6" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+             
+        </ul>
+       
+
+        <div data-role="popup" id="freimagen_4" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/apgar/esfuerzoresp/ausente0.jpg" style="max-height:300px;" >
+        </div>
+    
+        <div data-role="popup" id="freimagen_5" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/apgar/esfuerzoresp/debil.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="freimagen_6" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/apgar/esfuerzoresp/llanto.jpg" style="max-height:300px;" >
+        </div>
+
+
+        </div>
+       </div>
+      </div>
+        
+        
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+       <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
+       </div>
+      </div>        
+        
+     </div>
+     
+     <!--------------------------Tono Muscular del bebe----------------------------------->
+     
+      <div data-role="page" id="apgartomusbe" >   
+
+      <div data-role="header" >
+       <h1>Tono Muscular del Bebé</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+        <div style="width:80%">
+         <ul data-role="listview" data-split-icon="camera" data-split-theme="a" data-inset="true">
+          <li>
+           <a href="#apgarirritabilidad" class="frepreguntas_3" style="background-color:#F00">
+            <img src="images/apgar/tono/flazides0.jpg">
+            <h2 style="color:#FFF">Flacidez Total</h2>
+            <p style="color:#FFF">0</p>
+           </a>
+       
+           <a href="#freimagen_7" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+      
+          <li>
+           <a href="#apgarirritabilidad" class="frepreguntas_3" style="background-color:#FF0">
+            <img src="images/apgar/tono/ciertaflexion1.jpg">
+            <h2>Cierta Flexión de Extremidades</h2>
+            <p>1</p>
+           </a>
+       
+           <a href="#freimagen_8" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>      
+      
+          <li>
+           <a href="#apgarirritabilidad" class="frepreguntas_3" style="background-color:#0F0">
+            <img src="images/apgar/tono/activos2.jpg">
+            <h2>Movimientos Activos</h2>
+            <p>2</p>
+           </a>
+       
+           <a href="#freimagen_9" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+             
+        </ul>
+       
+
+        <div data-role="popup" id="freimagen_7" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/apgar/tono/flazides0.jpg" style="max-height:300px;" >
+        </div>
+    
+        <div data-role="popup" id="freimagen_8" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/apgar/tono/ciertaflexion1.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="freimagen_9" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/apgar/tono/activos2.jpg" style="max-height:300px;" >
+        </div>
+
+
+        </div>
+       </div>
+      </div>
+        
+        
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+       <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
+       </div>
+      </div>        
+        
+     </div>
+     
+     <!----------------------------------------esfuerzores-------------------------------->
+     
+     
+       <div data-role="page" id="apgaresfr" >   
+
+      <div data-role="header" >
+       <h1>FRECUENCIA CARDIACA</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+        <div style="width:80%">
+         <ul data-role="listview" data-split-icon="camera" data-split-theme="a" data-inset="true">
+          <li>
+           <a href="#apgartomusbe" class="frepreguntas_2" style="background-color:#F00">
+            <img src="images/apgar/esfuerzoresp/ausente0.jpg">
+            <h2 style="color:#FFF">Ausente</h2>
+            <p style="color:#FFF">0</p>
+           </a>
+       
+           <a href="#freimagen_4" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+      
+          <li>
+           <a href="#apgartomusbe" class="frepreguntas_2" style="background-color:#FF0">
+            <img src="images/apgar/esfuerzoresp/debil.jpg">
+            <h2>Débil, Irregular</h2>
+            <p>1</p>
+           </a>
+       
+           <a href="#freimagen_5" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>      
+      
+          <li>
+           <a href="#apgartomusbe" class="frepreguntas_2" style="background-color:#0F0">
+            <img src="images/apgar/esfuerzoresp/llanto.jpg">
+            <h2>Llanto Vigoroso</h2>
+            <p>2</p>
+           </a>
+       
+           <a href="#freimagen_6" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+             
+        </ul>
+       
+
+        <div data-role="popup" id="freimagen_4" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/apgar/esfuerzoresp/ausente0.jpg" style="max-height:300px;" >
+        </div>
+    
+        <div data-role="popup" id="freimagen_5" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/apgar/esfuerzoresp/debil.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="freimagen_6" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/apgar/esfuerzoresp/llanto.jpg" style="max-height:300px;" >
+        </div>
+
+
+        </div>
+       </div>
+      </div>
+        
+        
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+       <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
+       </div>
+      </div>        
+        
+     </div>
+     
+     <!--------------------------irritavlidad----------------------------------->
+     
+      <div data-role="page" id="apgarirritabilidad" >   
+
+      <div data-role="header" >
+       <h1>IRRITABILIDAD REFLEJADA</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+        <div style="width:80%">
+         <ul data-role="listview" data-split-icon="camera" data-split-theme="a" data-inset="true">
+          <li>
+           <a href="#apgarcolor" class="frepreguntas_4" style="background-color:#F00">
+            <img src="images/apgar/irritavilidad/sinrespuesta0.jpg">
+            <h2 style="color:#FFF">No Hay Respuesta</h2>
+            <p style="color:#FFF">0</p>
+           </a>
+       
+           <a href="#freimagen_10" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+      
+          <li>
+           <a href="#apgarcolor" class="frepreguntas_4" style="background-color:#FF0">
+            <img src="images/apgar/irritavilidad/discreta1.jpg">
+            <h2>Reacción Discreta(Muecas)</h2>
+            <p>1</p>
+           </a>
+       
+           <a href="#freimagen_11" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>      
+      
+          <li>
+           <a href="#apgarcolor" class="frepreguntas_4" style="background-color:#0F0">
+            <img src="images/apgar/irritavilidad/llanto2.jpg">
+            <h2>Llanto</h2>
+            <p>2</p>
+           </a>
+       
+           <a href="#freimagen_12" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+             
+        </ul>
+       
+
+        <div data-role="popup" id="freimagen_10" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/apgar/irritavilidad/sinrespuesta0.jpg" style="max-height:300px;" >
+        </div>
+    
+        <div data-role="popup" id="freimagen_11" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/apgar/irritavilidad/discreta1.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="freimagen_12" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/apgar/irritavilidad/llanto2.jpg" style="max-height:300px;" >
+        </div>
+
+
+        </div>
+       </div>
+      </div>
+        
+        
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+       <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
+       </div>
+      </div>        
+        
+     </div>
+     
+     <!----------------------------------------COLOR--------------------------------->
+     
+      <div data-role="page" id="apgarcolor" >   
+
+      <div data-role="header" >
+       <h1>COLOR</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+        <div style="width:80%">
+         <ul data-role="listview" data-split-icon="camera" data-split-theme="a" data-inset="true">
+          <li>
+           <a href="#apgarres" class="frepreguntas_5" style="background-color:#F00">
+            <img src="images/apgar/color/cianosis total0.jpg">
+            <h2 style="color:#FFF">Cianosis Total</h2>
+            <p style="color:#FFF">0</p>
+           </a>
+       
+           <a href="#freimagen_13" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+      
+          <li>
+           <a href="#apgarres" class="frepreguntas_5" style="background-color:#FF0">
+            <img src="images/apgar/color/cuerporosado1.jpg">
+            <h2>Cuerpo Rosado Cianosis Distal</h2>
+            <p>1</p>
+           </a>
+       
+           <a href="#freimagen_14" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>      
+      
+          <li>
+           <a href="#apgarres" class="frepreguntas_5" style="background-color:#0F0">
+            <img src="images/apgar/color/rosado.jpg">
+            <h2>Rosado</h2>
+            <p>2</p>
+           </a>
+       
+           <a href="#freimagen_15" data-rel="popup" data-position-to="window" data-transition="pop">
+            Ver imagen
+           </a>
+          </li>
+             
+        </ul>
+       
+
+        <div data-role="popup" id="freimagen_13" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/apgar/color/cianosis total0.jpg" style="max-height:300px;" >
+        </div>
+    
+        <div data-role="popup" id="freimagen_14" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/apgar/color/cuerporosado1.jpg" style="max-height:300px;" >
+        </div>
+
+<div data-role="popup" id="freimagen_15" data-theme="a" data-overlay-theme="b" data-corners="false" class="ui-content" style="max-width:340px;">
+         <a href="#"  data-rel="back"  class="ui-btn ui-corner-all  ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext  ui-btn-right">Cerrar</a>
+         <img class="popphoto" src="images/apgar/color/rosado.jpg" style="max-height:300px;" >
+        </div>
+
+
+        </div>
+       </div>
+      </div>
+        
+        
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+       <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
+       </div>
+      </div>        
+        
+     </div>
+     
+     <!---------------------------------------RESULTADO DE APGAR--------------------------------->
+     
+       <div data-role="page" id="apgarres" >   
+
+      <div data-role="header" >
+       <h1>RESULTADO</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+        
+        
+   
+       
+       <font face="Arial Black, Gadget, sans-serif" size="4"><div id="apgarresultado" style="background-color:#1ABCEC" align="center"></div></font>
+       
+			
+       
+        
+        <br>
+        
+        <font face="Arial Black, Gadget, sans-serif" size="5"><div id="rangoapgar" align="center"></div></font>
+        <br>
+         
+         
+       </div>
+      </div>
+        
+        
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+       <div data-role="navbar">
+        <ul><li><a href="javascript:confirmar()" data-icon="home">INICIO</a></li></ul>
+       </div>
+      </div>        
+        
+     </div>
+     
+     <!---------------------------------ACERCA DE----------------------------------------------->
+      <div data-role="page" id="acercade" >   
+
+      <div data-role="header" >
+       <h1>ACERCA DE</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+      <p>Esta app consiste en un cálculo que puede proporcionarle al médico una fecha de posible parto y al mismo tiempo las semanas de gestación del feto.</p>
+   <p>También ofrece  una recopilación de distintos exámenes realizados a los niños recién nacidos, minutos después de su nacimiento.</p>
+
+Todo esto con la finalidad de apoyar y hacer más eficiente el trabajo de un médico y/o enfermeras. 
+
+<h3>Asesores</h3>
+<p>Francisco José Couto Pelaez</p>
+<p>Angélica Romero Portillo</p>
+    <h3>Programadores</h3>
+    <p>Alejandro Iván Romero Portillo</p>
+    <p>Jonathan Mialma Martinez</p>
+    <p>Edher Eduardo Muñoz Mancera</p>
+      </div>
+      </div>
+      </div>
+       
      
  </body>
 </html> 
