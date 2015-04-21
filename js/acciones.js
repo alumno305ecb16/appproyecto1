@@ -47,7 +47,7 @@ $(document).ready(function(e) {
 
 
 	
-	document.addEventListener("deviceready",function(){
+	//document.addEventListener("deviceready",function(){
 
 
 		
@@ -251,25 +251,25 @@ $('#resultadocro').on('click',function(){
 	 $("#puntosregs").text(suma);
 });
 		//Capurro
-	$(".cappreguntas_uno").on('tap', function (){
+	$(".cappreguntas_uno").on('click', function (){
        cappreguntas1 = $(this).find('p').text();
 	 
    });	
    
-   $(".cappreguntas_2").on('tap', function (){
+   $(".cappreguntas_2").on('click', function (){
        cappreguntas2 = $(this).find('p').text();
 	 
    });	
    
-    $(".cappreguntas_3").on('tap', function (){
+    $(".cappreguntas_3").on('click', function (){
        cappreguntas3 = $(this).find('p').text();
    });	
    
-    $(".cappreguntas_4").on('tap', function (){
+    $(".cappreguntas_4").on('click', function (){
        cappreguntas4 = $(this).find('p').text();
    });	
    
-    $(".cappreguntas_5").on('tap', function (){
+    $(".cappreguntas_5").on('click', function (){
        cappreguntas5 = $(this).find('p').text();
 	 
 	   
@@ -332,10 +332,10 @@ $('#resultadocro').on('click',function(){
 	    
    });	
    
-    $(".cappreguntas_6").on('tap', function (){
+    $(".cappreguntas_6").on('click', function (){
        cappreguntas6 = $(this).find('p').text();
    });	
-    $(".cappreguntas_7").on('tap', function (){
+    $(".cappreguntas_7").on('click', function (){
        cappreguntas7 = $(this).find('p').text();
 	   
 	    if ((cappreguntas1 != "") && (cappreguntas2 != "") && (cappreguntas3 != "") && (cappreguntas4 != "") && (cappreguntas5 != "") && (cappreguntas6 != "") && (cappreguntas7 != ""))
@@ -374,32 +374,32 @@ $('#resultadocro').on('click',function(){
 		//Silverman
 
 
- $(".preguntas_uno").on('tap', function (){
+ $(".preguntas_uno").on('click', function (){
        preguntas1 = $(this).find('p').text();
    });
 
- $(".preguntas_dos").on('tap', function (){
+ $(".preguntas_dos").on('click', function (){
 	   
 		   preguntas2 = $(this).find('p').text();
 		//   $( "body" ).pagecontainer( "change", "#silverretcif", { transition: "pop" });
 	   
    });
   
-  $(".preguntas_tres").on('tap', function (){
+  $(".preguntas_tres").on('click', function (){
 	   
        preguntas3 = $(this).find('p').text();
 	  // $( "body" ).pagecontainer( "change", "#silveraleteo", { transition: "fade" });
 	   
    });
    
-    $(".preguntas_cuatro").on('tap', function (){
+    $(".preguntas_cuatro").on('click', function (){
 	   
        preguntas4 = $(this).find('p').text();
 	   //$( "body" ).pagecontainer( "change", "#silverquejidona", { transition: "slidedown" });
 	  // alert(preguntas4);
    });
 
-	  $(".preguntas_cinco").on('tap', function (){
+	  $(".preguntas_cinco").on('click', function (){
        preguntas5 = $(this).find('p').text();
 	
 		
@@ -437,19 +437,19 @@ $('#resultadocro').on('click',function(){
 		//APGAR
 		
 		
-	  $(".frepreguntas_1").on('tap', function (){
+	  $(".frepreguntas_1").on('click', function (){
        frepreguntas1 = $(this).find('p').text();
    });
-    $(".frepreguntas_2").on('tap', function (){
+    $(".frepreguntas_2").on('click', function (){
        frepreguntas2 = $(this).find('p').text();
    });
-    $(".frepreguntas_3").on('tap', function (){
+    $(".frepreguntas_3").on('click', function (){
        frepreguntas3 = $(this).find('p').text();
    });
-    $(".frepreguntas_4").on('tap', function (){
+    $(".frepreguntas_4").on('click', function (){
        frepreguntas4 = $(this).find('p').text();
    });
-    $(".frepreguntas_5").on('tap', function (){
+    $(".frepreguntas_5").on('click', function (){
        frepreguntas5 = $(this).find('p').text();
 	 
 	  
@@ -484,7 +484,7 @@ $('#resultadocro').on('click',function(){
    
    
   
-   $('#btnriesgo').on('tap', function(){
+   $('#btnriesgo').on('click', function(){
 	   
 	   $('#hc1').prop("checked",false);   
 	   
@@ -593,7 +593,7 @@ $('#resultadocro').on('click',function(){
    
    
    
-   $('#btnriesgo').on('tap',function(){
+   $('#btnriesgo').on('click',function(){
 	  $("body").pagecontainer("change","#riesgoobstetrico",{transition:"slidedown"});
 	  $('.caja').each(function() {
         if($(this).is(':checkbox'))
@@ -617,6 +617,5 @@ picker.on( "change", function() {
  
     // JavaScript Date object
     var dateObject = $( this ).mobipick( "option", "date" );
-});
 });
 });
