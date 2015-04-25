@@ -74,39 +74,9 @@ var pinterrogatorio = $( "#TxtInterrogatorioDirecto option:selected" ).text();
 });	
 });
  
- //MOSTRAR TABLA
- 
- function cargarlistapacientes()
-{
-$('#listapacientes').empty();
- db.transaction (function (ejecutar){
-   var sql = "SELECT Nombre_Paciente FROM Pacientes2";
-   ejecutar.executeSql (sql, undefined,
-   function (ejecutar, resultado){
- 
-
-for (var x = 0; x < resultado.rows.length ; x++)
-{
-	
-	var filaP = resultado.rows.item (x);
-	
-
-	$("#listapacientes").append('<li class="pacienteseleccionado"><a href="#">'+filaP.Nombre_Paciente+'</a></li>');
-$('#listapacientes').listview('refresh');
-
-
-}
-
-   });
-
-	  });
-
-
-}
-
-
-//MOSTRAR
-
+		//MOSTRAR TABLA
+		
+		
 $('#Mostrar').on('tap', function(){
 
 	  db.transaction (function (ejecutar){
