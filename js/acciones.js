@@ -77,7 +77,7 @@ var pinterrogatorio = $( "#TxtInterrogatorioDirecto option:selected" ).text();
 $('#Mostrar').on('tap', function(){
 
 	  db.transaction (function (ejecutar){
-   var sql = "SELECT * FROM Pacientes2";
+   var sql = "SELECT * FROM pacientes";
    ejecutar.executeSql (sql, undefined,
    function (ejecutar, resultado){
  
