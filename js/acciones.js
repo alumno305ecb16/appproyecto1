@@ -128,6 +128,13 @@ $('#listapacientes').listview('refresh');
     dateFormat: "dd-MM-yyyy"
 });
 
+	//BTN CARGAR PACIENTE
+$('#btnlistadopacientes').on('click', function (){
+	alert ("here");
+	cargarlistapacientes();
+	$( "body" ).pagecontainer( "change", "#seleccion_paciente", { transition: "slide" });
+});
+
 
 					//CAMBIAR COLOR
 $(document).ready(function(e) {
@@ -159,14 +166,7 @@ $('#fdpp').on('click',function(){
 	$("#resfecha").text("");
 });
 
-//
-$('#btnlistadopacientes').on('click', function (){
-	alert ("here");
-	cargarlistapacientes();
-	$( "body" ).pagecontainer( "change", "#seleccion_paciente", { transition: "slide" });
-});
-
-
+			
 $('#resultadocro').on('click',function(){
 	var suma=0;
 	
