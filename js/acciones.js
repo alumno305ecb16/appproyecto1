@@ -1,6 +1,6 @@
 // JavaScript Document1
 
-							//CALENDARIO
+							
 $(document).on("pagecreate",function(){
 	var preguntas1 = "";
 	var preguntas2= "";
@@ -23,7 +23,42 @@ $(document).on("pagecreate",function(){
 	var frepreguntas4= "";
 	var frepreguntas5= "";
 	
+	// base de datos
 	
+	$(document).ready(function(e) {
+	
+	var dbTam = 8 * 1024 * 1024; // 8MB
+	var db = openDatabase ("Medico", "1.0", "Datos app medico", dbTam);
+
+
+    db.transaction (function (transaction)
+      {
+       var sql = "CREATE TABLE IF NOT EXISTS pacientes " +
+       " (Cve_Paciente INTEGER  PRIMARY KEY, " +
+       "Nombre_Paciente NOT NULL, " +
+       "Edad_Paciente NOT NULL, " +
+       "Dir_Paciente , " +
+	   "Interrogtorio_Directo NOT NULL, "
+  	
+       transaction.executeSql (sql, undefined, function ()
+        {
+         alert ("Tabla Creada");
+        }, error);
+      });
+
+      function error (transaction, err)
+       {
+        alert ("Error de BD: " + err.message);
+        return false;
+       } 
+	
+	
+	
+ 
+ 
+ 
+	
+	//CALENDARIO
 
 	//en español
 		$("input.selectorfechaum", this ).mobipick({
@@ -618,5 +653,6 @@ picker.on( "change", function() {
  
     // JavaScript Date object
     var dateObject = $( this ).mobipick( "option", "date" );
+});
 });
 });

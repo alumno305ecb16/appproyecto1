@@ -3,6 +3,7 @@
  <head> 
         <meta charset="UTF-8">
        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>-->
+       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta name="viewport" content="width=device-width, user-scalable=no"/>
  
         <title>Mi aplicacion</title>
@@ -2177,12 +2178,69 @@ Todo esto con la finalidad de apoyar y hacer más eficiente el trabajo de un mé
                </div>
                <div>
                
-                <a href="#nuevo_paciente" class="ui-btn ui-shadow ui-btn-icon-right ui-btn-corner-all ui-icon-edit">NUEVO PACIENTE</a>
+                <a href="#nuevo" class="ui-btn ui-shadow ui-btn-icon-right ui-btn-corner-all ui-icon-edit">NUEVO PACIENTE</a>
          <a href="#" id="btnlistadopacientes" class="ui-btn ui-shadow ui-btn-icon-right ui-btn-corner-all ui-icon-bullets"> ELEGIR PACIENTE</a>
          <a href="#mostrar_paciente" class="ui-btn ui-shadow ui-btn-icon-right ui-btn-corner-all ui-icon-info"> MOSTRAR PACIENTE </a>
                </div>
                </div>
                
+     
+     <!---------------------------NUEVO------------------------------------>
+     
+      <div data-role="page" id="nuevo" >   
+        <div data-role="header" data-position="fixed" data-tap-toggle="false">
+        <div style="width:10%; float:left"><a href="#principal" class="ui-btn ui-shadow ui-icon-arrow-l ui-btn-icon-right ui-btn-corner-all ui-btn-icon-notext"></a></div>
+              <div style="width:80%; float:left" align="center"> <h4>PACIENTE</h4></div>
+               <div style="width:10%; float:left">&nbsp;</div>      
+               
+               </div>
+               <div align="center">
+               		  <label for="TxtInterrogatorioDirecto">Interrogatorio Directo:</label> 
+      					 <select id="TxtInterrogatorioDirecto" data-role="slider" data-mini="true">
+      					   <option value="off">No</option>
+        				 <option value="on" selected="">Si</option>
+       				 </select>
+                     	 <input id = "txtid_pasiente" type="text" placeholder="ID Paciente">
+               			 <input id = "TxtNombrePaciente" type="text" placeholder="Nombre Completo Paciente">
+       					 <input id = "TxtEdadPaciente" type="text" placeholder="Edad">
+                         <input id = "Txtdireccion" type="text" placeholder="Dirección">
+                         
+                         <a id="Guardar" class="ui-btn ui-btn-inline ui-btn-corner-all" >Guardar</a>
+     					  <a id="Mostrar" class="ui-btn ui-btn-inline ui-btn-corner-all" >Mostrar</a>
+						<a id="Borrar" class="ui-btn ui-btn-inline ui-btn-corner-all"> Borrar </a>
+               </div>
+               </div>
+              
+     
+     
+     <!----------------LISTA PACIENTE----------------------------------------------->
+     
+       <div data-role="page" id="seleccion_paciente" >   
+
+
+      <div data-role="header" >
+       <h1> Listado de Paciente </h1>
+      </div>
+         
+      <div data-role="main" class="ui-content" >
+       <div align="center">
+        <div style="width:65%">
+          <ul data-role="listview" data-inset="true" id="listapacientes">
+           <li class="pacienteseleccionado"><a href="#" >Yo</a>
+          </ul>
+        </div>
+       </div>
+      </div>
+        
+       
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+      <div class="pie"> </div>
+       <div data-role="navbar">
+        <h2> footer </h2>
+       </div>
+      </div>        
+        
+     </div>
      
      
  </body>
