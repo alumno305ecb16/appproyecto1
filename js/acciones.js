@@ -52,6 +52,10 @@ $(document).on("pagecreate",function(){
         return false;
        } 
 	
+	//mpstrar
+	
+
+	
 	
 				 //AGREGAR
 	 $('#Guardar').on('tap', function (){
@@ -66,14 +70,15 @@ var pdireccion = $('#TxtDirPaciente').val();
 var pinterrogatorio = $( "#TxtInterrogatorioDirecto option:selected" ).text();
   
   var sqlagregar = "INSERT INTO pacientes (Nombre_Paciente, Edad_Paciente, Dir_Paciente, Interrogtorio_Directo) VALUES (?,?,?,?,?,?)";
- alert("agrego");
+// alert("agrego");
 
     tx.executeSql (sqlagregar, [pid, pnombre, pedad, pdireccion, pinterrogatorio], pacientefooter (), error);
  
 	
 });	
 });
- 
+
+	
 $('#Mostrar').on('tap', function(){
 
 	  db.transaction (function (ejecutar){
@@ -88,6 +93,7 @@ for (var x = 0; x < resultado.rows.length ; x++)
 	var filaP = resultado.rows.item (x)
   alert (filaP.Nombre_Paciente);
     alert (filaP.Cve_Paciente);
+	alert("aa");
  //( new question(filaP.CvePregunta,filaP.Pregunta, filaP.R1,filaP.R2, filaP.R3.);	
 }
 
@@ -97,7 +103,8 @@ for (var x = 0; x < resultado.rows.length ; x++)
 
 
 });
-	
+ 
+
 	//CALENDARIO
 
 	//en español
