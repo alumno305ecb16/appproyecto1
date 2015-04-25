@@ -2,7 +2,8 @@
 <html>
  <head> 
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        
+       <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1 />
  
         <title>Mi aplicacion</title>
 
@@ -50,8 +51,9 @@ function confirmar()
      <div data-role="page" id="principal" >   
      
       
-        <div data-role="header" data-position="fixed" data-tap-toggle="false">     
-         <div style="width:10%; float:left"><a href="#acercade" class="ui-btn ui-shadow ui-icon-info ui-btn-icon-right ui-btn-corner-all ui-btn-icon-notext"></a></div>
+        <div data-role="header" data-position="fixed" data-tap-toggle="false">    
+          <a href="#pacientes" data-icon="user" class="ui-btn-left">Pacientes</a> 
+         <div style="width:10%; float:left"><a href="#acercade" class="ui-btn ui-shadow ui-icon-info ui-btn-right ui-btn-corner-all ui-btn-icon-notext"></a></div>
         
          <h1>HELPMED</h1>
         </div>
@@ -2165,6 +2167,23 @@ Todo esto con la finalidad de apoyar y hacer más eficiente el trabajo de un mé
       </div>
       </div>
        
+     <!-----------------------------PACIENTES--------------------------------------->
+     <div data-role="page" id="pacientes" >   
+        <div data-role="header" data-position="fixed" data-tap-toggle="false">
+        <div style="width:10%; float:left"><a href="#principal" class="ui-btn ui-shadow ui-icon-arrow-l ui-btn-icon-right ui-btn-corner-all ui-btn-icon-notext"></a></div>
+              <div style="width:80%; float:left" align="center"> <h4>PACIENTE</h4></div>
+               <div style="width:10%; float:left">&nbsp;</div>      
+               
+               </div>
+               <div>
+               
+                <a href="#nuevo_paciente" class="ui-btn ui-shadow ui-btn-icon-right ui-btn-corner-all ui-icon-edit">NUEVO PACIENTE</a>
+         <a href="#" id="btnlistadopacientes" class="ui-btn ui-shadow ui-btn-icon-right ui-btn-corner-all ui-icon-bullets"> ELEGIR PACIENTE</a>
+         <a href="#mostrar_paciente" class="ui-btn ui-shadow ui-btn-icon-right ui-btn-corner-all ui-icon-info"> Mostrar MOSTRAR PACIENTE </a>
+               </div>
+               </div>
+               
+     
      
  </body>
 </html> 
