@@ -38,7 +38,7 @@ $(document).on("pagecreate",function(){
        "Nombre_Paciente NOT NULL, " +
        "Edad_Paciente NOT NULL, " +
        "Dir_Paciente , " +
-	   "Interrogtorio_Directo NOT NULL, "
+	   "Interrogtorio_Directo NOT NULL)"
   	
        transaction.executeSql (sql, undefined, function ()
         {
@@ -53,10 +53,86 @@ $(document).on("pagecreate",function(){
        } 
 	
 	
+				 //AGREGAR
+	 $('#Guardar').on('tap', function (){
+
+   db.transaction(function (tx) {
+	   
+
+var pid = $('#txtid_pasiente').val();	   
+var pnombre = $('#TxtNombrePaciente').val();
+var pedad = $('#TxtEdadPaciente').val();
+var pdireccion = $('#TxtDirPaciente').val();
+var pinterrogatorio = $( "#TxtInterrogatorioDirecto option:selected" ).text();
+  
+  var sqlagregar = "INSERT INTO pacientes (Nombre_Paciente, Edad_Paciente, Dir_Paciente, Interrogtorio_Directo) VALUES (?,?,?,?,?,?)";
+ 
+
+    tx.executeSql (sqlagregar, [pid, pnombre, pedad, pdireccion, pinterrogatorio], pacientefooter (), error);
+ 
 	
+});	
+});
  
+ //MOSTRAR TABLA
  
+ function cargarlistapacientes()
+{
+$('#listapacientes').empty();
+ db.transaction (function (ejecutar){
+   var sql = "SELECT Nombre_Paciente FROM Pacientes2";
+   ejecutar.executeSql (sql, undefined,
+   function (ejecutar, resultado){
  
+
+for (var x = 0; x < resultado.rows.length ; x++)
+{
+	
+	var filaP = resultado.rows.item (x);
+	
+
+	$("#listapacientes").append('<li class="pacienteseleccionado"><a href="#">'+filaP.Nombre_Paciente+'</a></li>');
+$('#listapacientes').listview('refresh');
+
+
+}
+
+   });
+
+	  });
+
+
+}
+
+
+//MOSTRAR
+
+$('#Mostrar').on('tap', function(){
+
+	  db.transaction (function (ejecutar){
+   var sql = "SELECT * FROM pacientes";
+   ejecutar.executeSql (sql, undefined,
+   function (ejecutar, resultado){
+ 
+
+for (var x = 0; x < resultado.rows.length ; x++)
+{
+	
+	var filaP = resultado.rows.item (x)
+  alert (filaP.Nombre_Paciente);
+    alert (filaP.Cve_Paciente);
+ //( new question(filaP.CvePregunta,filaP.Pregunta, filaP.R1,filaP.R2, filaP.R3.);	
+}
+
+   });
+
+	  });
+
+
+});
+
+
+
 	
 	//CALENDARIO
 
