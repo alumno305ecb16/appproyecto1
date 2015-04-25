@@ -79,7 +79,7 @@ var pinterrogatorio = $( "#TxtInterrogatorioDirecto option:selected" ).text();
 });
 
 	
-$('#Mostrar').on('tap', function(){
+$('#Mostrar1').on('tap', function(){
 
 	  db.transaction (function (ejecutar){
    var sql = "SELECT * FROM pacientes";
