@@ -42,7 +42,7 @@ $(document).on("pagecreate",function(){
   	
        transaction.executeSql (sql, undefined, function ()
         {
-       //  alert ("Tabla Creada");
+        alert ("Tabla Creada");
         }, error);
       });
 
@@ -57,6 +57,11 @@ $(document).on("pagecreate",function(){
 document.addEventListener("deviceready",function(){
 	
 	
+$(document).on('tap', "li.pacienteseleccionado", function() {
+    alert ("pie paciente seleccionado");
+    $(".pie").append("<h3>"+  $(this).find('a').text() +"</h3>");
+});
+	
 				 //AGREGAR
 	 $('#Guardar').on('tap', function (){
 //alert("agrego")
@@ -70,7 +75,7 @@ var pdireccion = $('#TxtDirPaciente').val();
 var pinterrogatorio = $( "#TxtInterrogatorioDirecto option:selected" ).text();
   
   var sqlagregar = "INSERT INTO pacientes (Nombre_Paciente, Edad_Paciente, Dir_Paciente, Interrogtorio_Directo) VALUES (?,?,?,?,?,?)";
- alert("agrego");
+ alert("AGREGO CORRECTAMENTE PACIENTE");
 
     tx.executeSql (sqlagregar, [pid, pnombre, pedad, pdireccion, pinterrogatorio], pacientefooter (), error);
  
