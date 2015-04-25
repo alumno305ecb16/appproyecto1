@@ -42,7 +42,7 @@ $(document).on("pagecreate",function(){
   	
        transaction.executeSql (sql, undefined, function ()
         {
-         alert ("Tabla Creada");
+       //  alert ("Tabla Creada");
         }, error);
       });
 
@@ -130,9 +130,6 @@ for (var x = 0; x < resultado.rows.length ; x++)
 
 
 });
-
-
-
 	
 	//CALENDARIO
 
