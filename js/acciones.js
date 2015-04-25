@@ -78,11 +78,12 @@ var pinterrogatorio = $( "#TxtInterrogatorioDirecto option:selected" ).text();
 });	
 });
 
-	
-$('#Mostrar1').on('tap', function(){
 
-	  db.transaction (function (ejecutar){
-   var sql = "SELECT * FROM pacientes";
+function cargarlistapacientes()
+{
+$('#listapacientes').empty();
+ db.transaction (function (ejecutar){
+   var sql = "SELECT Nombre_Paciente FROM pacientes";
    ejecutar.executeSql (sql, undefined,
    function (ejecutar, resultado){
  
@@ -90,11 +91,13 @@ $('#Mostrar1').on('tap', function(){
 for (var x = 0; x < resultado.rows.length ; x++)
 {
 	
-	var filaP = resultado.rows.item (x)
-  alert (filaP.Nombre_Paciente);
-    alert (filaP.Cve_Paciente);
-	//alert("aa");
- //( new question(filaP.CvePregunta,filaP.Pregunta, filaP.R1,filaP.R2, filaP.R3.);	
+	var filaP = resultado.rows.item (x);
+	
+
+	$("#listapacientes").append('<li class="pacienteseleccionado"><a href="#">'+filaP.Nombre_Paciente+'</a></li>');
+$('#listapacientes').listview('refresh');
+
+
 }
 
    });
@@ -102,7 +105,9 @@ for (var x = 0; x < resultado.rows.length ; x++)
 	  });
 
 
-});
+}
+
+
  
 
 	//CALENDARIO
