@@ -66,7 +66,7 @@ var pdireccion = $('#TxtDirPaciente').val();
 var pinterrogatorio = $( "#TxtInterrogatorioDirecto option:selected" ).text();
   
   var sqlagregar = "INSERT INTO pacientes (Nombre_Paciente, Edad_Paciente, Dir_Paciente, Interrogtorio_Directo) VALUES (?,?,?,?,?,?)";
- 
+ alert("agrego");
 
     tx.executeSql (sqlagregar, [pid, pnombre, pedad, pdireccion, pinterrogatorio], pacientefooter (), error);
  
