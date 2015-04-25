@@ -23,6 +23,13 @@ $(document).on("pagecreate",function(){
 	var frepreguntas4= "";
 	var frepreguntas5= "";
 	
+		//BTN CARGAR PACIENTE
+$('#btnlistadopacientes').on('click', function (){
+	alert ("here");
+	cargarlistapacientes();
+	$( "body" ).pagecontainer( "change", "#seleccion_paciente", { transition: "slide" });
+});
+
 	// base de datos
 	
 	$(document).ready(function(e) {
@@ -78,7 +85,7 @@ var pinterrogatorio = $( "#TxtInterrogatorioDirecto option:selected" ).text();
  alert("AGREGO CORRECTAMENTE PACIENTE");
 
     tx.executeSql (sqlagregar, [pid, pnombre, pedad, pdireccion, pinterrogatorio], pacientefooter (), error);
- 
+ $("#nomnew").text(pnombre);
 	
 });	
 });
@@ -128,13 +135,6 @@ $('#listapacientes').listview('refresh');
     dateFormat: "dd-MM-yyyy"
 });
 
-	//BTN CARGAR PACIENTE
-$('#btnlistadopacientes').on('click', function (){
-	alert ("here");
-	cargarlistapacientes();
-	$( "body" ).pagecontainer( "change", "#seleccion_paciente", { transition: "slide" });
-});
-
 
 					//CAMBIAR COLOR
 $(document).ready(function(e) {
@@ -167,6 +167,7 @@ $('#fdpp').on('click',function(){
 });
 
 			
+
 $('#resultadocro').on('click',function(){
 	var suma=0;
 	
