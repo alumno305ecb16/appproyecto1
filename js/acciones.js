@@ -74,6 +74,29 @@ var pinterrogatorio = $( "#TxtInterrogatorioDirecto option:selected" ).text();
 });	
 });
  
+$('#Mostrar').on('tap', function(){
+
+	  db.transaction (function (ejecutar){
+   var sql = "SELECT * FROM Pacientes2";
+   ejecutar.executeSql (sql, undefined,
+   function (ejecutar, resultado){
+ 
+
+for (var x = 0; x < resultado.rows.length ; x++)
+{
+	
+	var filaP = resultado.rows.item (x)
+  alert (filaP.Nombre_Paciente);
+    alert (filaP.Cve_Paciente);
+ //( new question(filaP.CvePregunta,filaP.Pregunta, filaP.R1,filaP.R2, filaP.R3.);	
+}
+
+   });
+
+	  });
+
+
+});
 	
 	//CALENDARIO
 
