@@ -111,10 +111,6 @@ $('#listapacientes').listview('refresh');
 
 
 }
-
-
- 
-
 	//CALENDARIO
 
 	//en español
@@ -164,6 +160,11 @@ $('#fdpp').on('click',function(){
 });
 
 //
+$('#btnlistadopacientes').on('click', function (){
+	alert ("here");
+	cargarlistapacientes();
+	$( "body" ).pagecontainer( "change", "#seleccion_paciente", { transition: "slide" });
+});
 
 
 $('#resultadocro').on('click',function(){
